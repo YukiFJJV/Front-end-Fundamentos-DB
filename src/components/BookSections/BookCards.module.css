@@ -1,0 +1,67 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.book_cards{
+    border-radius: 12px;
+    width: 235px;
+    height: 470px;
+    position: relative;
+
+    background-color: #361e3633;
+    border: 0.5px solid rgba(255, 255, 255, 0.08);
+    padding: 10px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    will-change: transform;
+}
+
+.book_cards::after {
+    content: "";
+    position: absolute;
+    bottom: -10px; /* Cuelga por debajo de la tarjeta */
+    left: 0;
+    width: 100%;
+    height: 10px; /* Cubre los píxeles que la tarjeta se va a mover */
+}
+
+.book_cards:hover{
+    transform: translateY(-8px);
+    border-color: rgba(150, 40, 170, 0.5);
+}
+
+.book_cards img{
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    outline: 2px solid transparent;
+}
+
+.book_cards:hover img{
+    outline-color: rgba(150, 40, 170);
+}
+
+
+.book_cards h3{
+    margin: 0px;
+    margin-bottom: 2px;
+    margin-left: 8px;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+.book_cards footer{
+    margin: 0px;
+    margin-left: 8px;
+    text-align: left;
+    font-family: 'Fira Code', 'JetBrains Mono', monospace;
+    font-size: 12px;
+}

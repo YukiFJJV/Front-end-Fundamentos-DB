@@ -1,0 +1,97 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.05);
+    z-index: 5;
+
+    /* Animación */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.overlay_open {
+    opacity: 1;
+    pointer-events: auto; /* Permite recibir el clic para cerrar */
+}
+
+.sidebar_container{
+    position: fixed;
+    top:0px;
+    left: 0;
+    bottom: 0;
+    width: 260px;
+    height: 100vh;
+    box-shadow: 4px 0 6px rgba(0, 0, 0, 0.2);
+    z-index:10;
+    background-color: rgb(43, 23, 44);
+
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.sidebar_open {
+    transform: translateX(0);
+}
+
+.sidebar_wrapper {
+    padding: 60px 20px 20px 10px;
+}
+
+.sidebar_wrapper ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.sidebar_wrapper li {
+    color: #fff;
+    font-family: 'Inter', 'sans-serif';
+    border-radius: 0px 20px 20px 0px;
+
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    text-align: left;
+}
+
+.sidebar_wrapper svg{
+    fill: #fff;
+    width: 24px;
+    height: 24px;
+    padding-right: 10px;
+}
+
+.sidebar_wrapper li:hover{
+    background: linear-gradient(
+        to left,
+        rgba(150, 40, 170, 0.4) 40%,
+        rgba(150, 40, 170, 0.2) 60%,
+        rgba(150, 40, 170, 0.1) 70%,
+        rgba(150, 40, 170, 0.005) 100%
+    );
+    transform: translateX(12px);
+}
+
+.sidebar_wrapper li:hover{
+    color: rgb(118, 228, 255);
+}
+
+.sidebar_wrapper li:hover svg path{
+    fill: rgb(118, 228, 255);
+}
+
+.link_style {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0.8rem;
+    box-sizing: border-box;
+    cursor: pointer;
+}

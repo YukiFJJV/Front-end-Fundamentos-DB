@@ -1,0 +1,11 @@
+.typewriterText {
+    font-size: clamp(1.2rem, 4.5vw, 5rem);
+
+    /* Permite que el texto se ajuste si es muy largo */
+    white-space: normal;
+    word-wrap: break-word;
+    max-width: 100%;
+
+    /* Centrado si el contenedor es ancho */
+    text-align: center;
+}

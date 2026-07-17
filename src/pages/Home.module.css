@@ -1,0 +1,104 @@
+.section_header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.continue_reading,
+.explore_more {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+section {
+    margin: 0;
+    padding-left: 20px;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+}
+
+.see_all {
+    color: rgba(150, 40, 170);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Fira Code', 'JetBrains Mono', monospace;
+    margin-right: 30px;
+}
+
+.see_all:hover{
+    color: rgba(190, 120, 190);
+}
+
+/* --- ANIMACIONES DE TRANSICIÓN --- */
+.fade_in {
+    animation: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- HEADER DE BÚSQUEDA --- */
+.search_header{
+    margin: 0;
+    font-size: 50px;
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+    margin-bottom: 30px;
+    margin-top: 60px;
+    color: white;
+    text-shadow: -4px 0px 0px rgba(255,0,0,0.5), 4px 0px 0px rgba(0,0,255,0.5);
+}
+
+.cursor_text{
+    font-weight: 400;
+    animation: parpadeo 0.8s infinite;
+}
+
+@keyframes parpadeo {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* --- HOME FOOTER --- */
+.home_footer{
+    margin: 0;
+    margin-top: 20px;
+    padding: 40px 0;
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(to top, rgb(73, 65, 72) 40%, rgb(71, 53, 67, 0.3) 70%, rgb(71, 53, 67, 0.25) 85%,rgb(71, 53, 67, 0.02) 100%);
+}
+
+.mision{
+    margin: 0px;
+    margin: 0 5%;
+    text-align: left;
+}
+
+.mision h3{
+    text-align:center;
+}
+
+.vision{
+    margin:0;
+    margin: 0 5%;
+    text-align: left;
+}
+
+.vision h3{
+    text-align: center;
+}
