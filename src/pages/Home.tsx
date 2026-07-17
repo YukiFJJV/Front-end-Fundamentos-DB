@@ -136,12 +136,12 @@ export default function Home(){
                     </div>
             </SearchWrapper>
             {/* Popup de descripción */}
-                {selectedBook && (
-                    <ProductDescription
-                        book={selectedBook}
-                        onClose={() => setSelectedBook(null)}
-                    />
-                )}
+            {selectedBook && (
+                <ProductDescription
+                    book={selectedBook}
+                    onClose={() => setSelectedBook(null)}
+                />
+            )}
         </>
     );
 }

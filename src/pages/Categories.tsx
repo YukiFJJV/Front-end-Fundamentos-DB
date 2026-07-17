@@ -2,6 +2,7 @@ import { useState } from "react";
 import SearchWrapper from '../components/Search/SearchWrapper';
 import type Book from '../types/Book';
 import CategorySection from '../components/BookSections/CategorySection';
+import ProductDescription from '../components/BookSections/ProductDescription';
 
 // Datos de prueba (recordar borrarlos luego)
 const mockBooks: Book[] = [
@@ -45,7 +46,7 @@ const mockBooks: Book[] = [
 
 export default function Categories(){
     const [selectedBook, setSelectedBook] = useState<Book | null>(null);
-    const [selectedCategory, setSelectedCategory] = useState<string|null>(null);
+    const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
     const handleSelectBook = (book:Book) =>{
         setSelectedBook(book);
     };
@@ -55,13 +56,22 @@ export default function Categories(){
             <SearchWrapper
                 onSelect={handleSelectBook}
                 booksPool={mockBooks}
+                selectedCategories={selectedCategories}
+                setSelectedCategories={setSelectedCategories}
+                hasFilter={true}
             >
                 <CategorySection
                     poolBooks={mockBooks}
                     onSelect={handleSelectBook}
-                    selectedCategory={selectedCategory}
+                    selectedCategories={selectedCategories}
                 />
             </SearchWrapper>
+            {selectedBook && (
+                <ProductDescription
+                    book={selectedBook}
+                    onClose={() => setSelectedBook(null)}
+                />
+            )}
         </>
     );
 }

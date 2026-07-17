@@ -1,19 +1,38 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import type Book from '../../types/Book';
 import styles from './Filter.module.css'
 
 interface FilteredResultsProps{
     booksPool: Book[];
-    selectedCategory: (string | null);
-    setSelectedCategory: (selectedCategory: string | null) => void;
+    selectedCategories: (string[]);
+    setSelectedCategories: (selectedCategory: string[]) => void;
 };
 
 export default function FilteredResults({
     booksPool,
-    selectedCategory,
-    setSelectedCategory
+    selectedCategories,
+    setSelectedCategories,
 }: FilteredResultsProps){
     const [isFilterOpen, setIsFilterOpen] = useState(false);
+    const filterRef = useRef<HTMLDivElement>(null);
+
+    useEffect(()=>{
+        const handleClickOutside = (event: MouseEvent) =>{
+            if(filterRef.current && !filterRef.current.contains(event.target as Node)){
+                setIsFilterOpen(false)
+            }
+        }
+
+        if(isFilterOpen){
+            document.addEventListener('mousedown', handleClickOutside)
+        }
+
+        // Limpiamos cuando se desmonta
+        return ()=>{
+            document.removeEventListener('mousedown', handleClickOutside);
+        }
+    }, [isFilterOpen]);
+
     const categories:string[] = useMemo(()=>{
         const allCategories = booksPool.map(book => book.genero)
 
@@ -21,19 +40,30 @@ export default function FilteredResults({
         return [... new Set(allCategories)];
     }, [booksPool])
 
-    const handleFilter = (selectedCategory: string | null)=>{
-        setSelectedCategory(selectedCategory)
+    const handleToggleCategory = (selectedCategory: string)=>{
+        if(selectedCategories.includes(selectedCategory)){
+            setSelectedCategories(selectedCategories.filter(c=>
+                c!== selectedCategory
+            ));
+        } else{
+            setSelectedCategories([...selectedCategories, selectedCategory]);
+        }
     }
 
     const handleOpen = () =>{
         setIsFilterOpen(prev => !prev)
     }
 
+    const handleClear = () =>{
+        setSelectedCategories([]);
+    }
+
     return(
-        <>
+        <div ref={filterRef} className={styles.filter_wrapper}>
             <button
                 id={styles.open_filter}
                 onClick={()=>handleOpen()}
+                className={isFilterOpen ? styles.filter_is_open : ""}
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -53,31 +83,33 @@ export default function FilteredResults({
 
             {
                 isFilterOpen && (
-                    <>
+                    <div className={styles.dropdown_menu}>
                         <button
                             id={styles.clear_filter}
-                            className={selectedCategory === null ?
+                            className={selectedCategories.length===0  ?
                                 styles.active_btn : ""}
-                            onClick={()=>handleFilter(null)}
+                            onClick={handleClear}
                         >
-                            &times;
+                            limpiar
                         </button>
 
-                        {
-                            categories.map((category)=>(
-                                <button
-                                    key={category}
-                                    className={selectedCategory === category
-                                        ? styles.active_btn : ""}
-                                    onClick={()=> handleFilter(category)}
-                                >
-                                    {category}
-                                </button>
-                            ))
-                        }
-                    </>
+                        <div className={styles.categories_container}>
+                            {
+                                categories.map((category)=>(
+                                    <button
+                                        key={category}
+                                        className={selectedCategories.includes(category)
+                                            ? styles.active_btn : ""}
+                                        onClick={()=> handleToggleCategory(category)}
+                                    >
+                                        {category}
+                                    </button>
+                                ))
+                            }
+                        </div>
+                    </div>
                 )
             }
-        </>
+        </div>
     );
 }

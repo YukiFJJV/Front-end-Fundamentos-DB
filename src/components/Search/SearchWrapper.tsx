@@ -1,6 +1,6 @@
 import type React from "react";
 import type Book from "../../types/Book";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import SearchBar from './SearchBar';
 import styles from './SearchWrapper.module.css'
 import BookCards from '../BookSections/BookCards';
@@ -10,18 +10,23 @@ interface SearchWrapperProps{
     children: React.ReactNode,
     booksPool: Book[],
     onSelect: (book: Book) => void,
-    topContent?: React.ReactNode
+    topContent?: React.ReactNode,
+    hasFilter?: boolean,
+    selectedCategories?: (string[]),
+    setSelectedCategories?: (selectedCategories: (string[])) => void
 }
 
 export default function SearchWrapper({
     children,
     booksPool,
     onSelect,
-    topContent
+    topContent,
+    selectedCategories = [], // Valor por default
+    setSelectedCategories = ()=>{}, // por default
+    hasFilter
 }:SearchWrapperProps){
     const [search, setSearch] = useState("");
     const [showResults, setShowResults] = useState(false);
-    const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
     // Coordinador de animación asíncrono
     useEffect(() => {
@@ -36,27 +41,27 @@ export default function SearchWrapper({
     // Función utilitaria para la búsqueda
     const handleSearch = (value: string) =>{
         setSearch(value);
-        if(value.trim.length===0){
+        if(value.trim().length===0){
             setShowResults(false);
         }
     };
 
     // Filtrar los libros por su nombre, autor o isbn
-    const filteredResults = booksPool.filter((book) => {
-        const cleanSearch = search.toLowerCase();
+    const filteredResults = useMemo(()=>{
+        return booksPool.filter((book) => {
+            const cleanSearch = search.toLowerCase();
+            const coincidences = (
+                book.titulo.toLowerCase().includes(cleanSearch) ||
+                book.autor.toLowerCase().includes(cleanSearch) ||
+                book.isbn.toLowerCase().includes(cleanSearch)
+            );
+            const coincidencesCategory = selectedCategories.length>0
+                ? selectedCategories.includes(book.genero)
+                : true;
 
-        const coincidences = (
-            book.titulo.toLowerCase().includes(cleanSearch) ||
-            book.autor.toLowerCase().includes(cleanSearch) ||
-            book.isbn.toLowerCase().includes(cleanSearch)
-        );
-
-        const coincidencesCategory = selectedCategory?
-            book.genero === selectedCategory
-            : true
-
-        return coincidences && coincidencesCategory
-    }, [booksPool, search, selectedCategory]);
+            return coincidences && coincidencesCategory;
+        });
+    },[booksPool, search, selectedCategories]);
 
     return(
         <>
@@ -72,11 +77,15 @@ export default function SearchWrapper({
                     onSelect={onSelect}
                 />
 
-                <Filter
-                    booksPool={booksPool}
-                    selectedCategory={selectedCategory}
-                    setSelectedCategory={setSelectedCategory}
-                />
+                {
+                    (hasFilter) && (
+                        <Filter
+                            booksPool={booksPool}
+                            selectedCategories={selectedCategories}
+                            setSelectedCategories={setSelectedCategories}
+                        />
+                    )
+                }
             </div>
 
             {/* El contenido principal cambia según showResults */}

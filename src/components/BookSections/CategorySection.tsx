@@ -6,10 +6,14 @@ import BookCards from './BookCards';
 interface CategorySectionProps{
     poolBooks: Book[]
     onSelect: (book: Book) =>void
-    selectedCategory: (string | null);
+    selectedCategories: (string[]);
 }
 
-export default function CategorySection({poolBooks, onSelect}:CategorySectionProps){
+export default function CategorySection({
+    poolBooks,
+    onSelect,
+    selectedCategories
+}:CategorySectionProps){
     const filteredByCategory = useMemo(()=>{
         if(!poolBooks)
             return{};
@@ -33,23 +37,25 @@ export default function CategorySection({poolBooks, onSelect}:CategorySectionPro
         <div className={style.catalog_container}>
             {
                 Object.entries(filteredByCategory).map(
-                    // Ordena el objeto en ese orden-> 0 category, 1 Book[]
+                    // Ordena el array en ese orden-> 0 category, 1 Book[]
                     ([category, poolBooks])=>(
-                        <div key={category} className={style.category_section}>
-                            <h2>{category}</h2>
-                            <ul>
-                                {
-                                    poolBooks.map((book: Book)=>(
-                                        <li key={book.id_producto}>
-                                            <BookCards
-                                                book={book}
-                                                onSelect={onSelect}
-                                            />
-                                        </li>
-                                    ))
-                                }
-                            </ul>
-                        </div>
+                        (selectedCategories.length===0 || selectedCategories.includes(category)) && (
+                            <div key={category} className={style.category_section}>
+                                <h2>{category}</h2>
+                                <ul>
+                                    {
+                                        poolBooks.map((book: Book)=>(
+                                            <li key={book.id_producto}>
+                                                <BookCards
+                                                    book={book}
+                                                    onSelect={onSelect}
+                                                />
+                                            </li>
+                                        ))
+                                    }
+                                </ul>
+                            </div>
+                        )
                     )
                 )
             }

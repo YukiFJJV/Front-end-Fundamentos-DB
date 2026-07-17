@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import type Book from "../../types/Book";
 import styles from "./SearchBar.module.css";
 import { useOutletContext } from "react-router-dom";
@@ -25,21 +24,12 @@ export default function SearchBar({
     onSelect,
 }: SearchBarProps){
     const {setIsSearchActive} = useOutletContext<LayoutContext>();
-    // Coordinador de animación asíncrono
-    useEffect(() => {
-        if (search.trim().length > 0) {
-            const timer = setTimeout(() => {
-                onShowResultsChange(true);
-                setIsSearchActive(true);
-            }, 500);
-            return () => clearTimeout(timer);
-        }
-    }, [search, onShowResultsChange, setIsSearchActive]);
 
     // Función para resaltar texto dinámicamente extraída
     const highlightMatch = (text: string, query: string) => {
         if (!query) return text;
-        const regex = new RegExp(`(${query})`, 'gi');
+        const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+        const regex = new RegExp(`(${escapedQuery})`, 'gi');
         const parts = text.split(regex);
 
         return parts.map((part, index) =>
@@ -117,17 +107,17 @@ export default function SearchBar({
                 {showResults && (
                     <ul className={`${styles.search_dropdown} ${styles.fade_in}`}>
                         {results.length > 0 ? (
-                            results.map((libro) => (
+                            results.map((book) => (
                                 <li
-                                    key={libro.id_producto}
+                                    key={book.id_producto}
                                     onClick={(e) => {
                                         e.stopPropagation();
-                                        onSelect(libro);
+                                        onSelect(book);
                                         handleClear(); // Limpia y cierra el buscador
                                     }}
                                 >
                                     <span>
-                                        {highlightMatch(libro.titulo, search)} - {highlightMatch(libro.autor, search)}
+                                        {highlightMatch(book.titulo, search)} - {highlightMatch(book.autor, search)}
                                     </span>
                                 </li>
                             ))
