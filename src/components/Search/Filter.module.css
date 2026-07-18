@@ -17,6 +17,7 @@
     color: #4b5563;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+    margin-right: 27px;
 }
 
 #open_filter:hover,
@@ -72,7 +73,7 @@
     background-color: #fee2e2;
 }
 
-/* Cuando no hay filtros */
+/* Cuando hay filtros */
 #clear_filter.active_btn {
     color: #ef4444;
 }

@@ -87,7 +87,7 @@ export default function FilteredResults({
                         <button
                             id={styles.clear_filter}
                             className={selectedCategories.length===0  ?
-                                styles.active_btn : ""}
+                                "" : styles.active_btn}
                             onClick={handleClear}
                         >
                             limpiar

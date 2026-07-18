@@ -11,9 +11,9 @@ interface SearchWrapperProps{
     booksPool: Book[],
     onSelect: (book: Book) => void,
     topContent?: React.ReactNode,
-    hasFilter?: boolean,
     selectedCategories?: (string[]),
     setSelectedCategories?: (selectedCategories: (string[])) => void
+    hasFilter?: boolean
 }
 
 export default function SearchWrapper({
@@ -23,7 +23,7 @@ export default function SearchWrapper({
     topContent,
     selectedCategories = [], // Valor por default
     setSelectedCategories = ()=>{}, // por default
-    hasFilter
+    hasFilter = false
 }:SearchWrapperProps){
     const [search, setSearch] = useState("");
     const [showResults, setShowResults] = useState(false);
@@ -75,17 +75,16 @@ export default function SearchWrapper({
                     onShowResultsChange={setShowResults}
                     results={filteredResults}
                     onSelect={onSelect}
-                />
-
-                {
-                    (hasFilter) && (
+                >
+                    {hasFilter && (
                         <Filter
                             booksPool={booksPool}
                             selectedCategories={selectedCategories}
                             setSelectedCategories={setSelectedCategories}
                         />
-                    )
-                }
+                    )}
+                </SearchBar>
+
             </div>
 
             {/* El contenido principal cambia según showResults */}

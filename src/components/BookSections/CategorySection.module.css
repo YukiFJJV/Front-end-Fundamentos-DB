@@ -23,3 +23,59 @@
     list-style: none;
     padding: 0;
 }
+
+.carousel_container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 10px; /* Espacio entre botones y lista */
+}
+
+/* La lista de libros */
+.book_list {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    overflow-y: hidden;
+    gap: 20px; /* Espaciado entre las BookCards */
+    padding: 15px 0;
+    margin: 0;
+    list-style: none;
+    flex: 1; /* Ocupa el espacio restante entre los botones */
+
+    /* Ocultar la barra de scroll */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Ocultar barra de scroll */
+.book_list::-webkit-scrollbar {
+    display: none;
+}
+
+/* Evita que las tarjetas se encojan */
+.book_item {
+    flex: 0 0 auto;
+}
+
+/* Botones y flechas */
+.scroll_button {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0;
+    z-index: 2;
+}
+
+.scroll_button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}

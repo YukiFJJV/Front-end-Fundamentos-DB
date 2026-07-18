@@ -1,6 +1,7 @@
 import type Book from "../../types/Book";
 import styles from "./SearchBar.module.css";
 import { useOutletContext } from "react-router-dom";
+import React from 'react';
 
 interface SearchBarProps {
     search: string;
@@ -9,6 +10,7 @@ interface SearchBarProps {
     onShowResultsChange: (value: boolean) => void;
     results: Book[];
     onSelect: (book: Book) => void;
+    children?: React.ReactNode;
 }
 
 interface LayoutContext{
@@ -22,6 +24,7 @@ export default function SearchBar({
     onShowResultsChange,
     results,
     onSelect,
+    children
 }: SearchBarProps){
     const {setIsSearchActive} = useOutletContext<LayoutContext>();
 
@@ -102,6 +105,8 @@ export default function SearchBar({
                         &times;
                     </button>
                 )}
+                
+                {children}
 
                 {/* El dropdown solo aparece cuando showResults es true */}
                 {showResults && (
