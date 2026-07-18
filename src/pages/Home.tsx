@@ -6,6 +6,7 @@ import ProductDescription from "../components/BookSections/ProductDescription";
 import TypeText from '../components/TypeText';
 import styles from "./Home.module.css";
 import SearchWrapper from '../components/Search/SearchWrapper';
+import { Link } from 'react-router-dom';
 
 // Datos de prueba (recordar borrarlos luego)
 const mockBooks: Book[] = [
@@ -107,7 +108,15 @@ export default function Home(){
                     <section>
                         <div className={styles.section_header}>
                             <h2>Explora más obras!</h2>
-                            <span className={styles.see_all}>Ver todos &rarr;</span>
+                            <span
+                                className={styles.see_all}
+                            >
+                                <Link
+                                    to='/Categories'
+                                >
+                                    Ver todos &rarr;
+                                </Link>
+                            </span>
                         </div>
                         <div className={styles.explore_more}>
                             {mockBooks.map((userBook) => (

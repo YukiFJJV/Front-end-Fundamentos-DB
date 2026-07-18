@@ -22,6 +22,7 @@ h2 {
     font-family: 'Roboto', sans-serif;
 }
 
+/* --- VER MÁS --- */
 .see_all {
     color: rgba(150, 40, 170);
     cursor: pointer;
@@ -33,6 +34,11 @@ h2 {
 
 .see_all:hover{
     color: rgba(190, 120, 190);
+}
+
+.link_style {
+    text-decoration: none;
+    color: inherit;
 }
 
 /* --- ANIMACIONES DE TRANSICIÓN --- */
@@ -102,3 +108,4 @@ h2 {
 .vision h3{
     text-align: center;
 }
+

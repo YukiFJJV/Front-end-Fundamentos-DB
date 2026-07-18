@@ -35,7 +35,6 @@
 .book_list {
     display: flex;
     overflow-x: auto;
-    scroll-behavior: smooth;
     overflow-y: hidden;
     gap: 20px; /* Espaciado entre las BookCards */
     padding: 15px 0;

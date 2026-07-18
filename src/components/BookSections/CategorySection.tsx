@@ -1,4 +1,4 @@
-import { useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import type Book from '../../types/Book';
 import style from './CategorySection.module.css'
 import BookCards from './BookCards';
@@ -21,13 +21,67 @@ const CategoryRow = ({
 }) =>{
     const scrollRef = useRef<HTMLUListElement>(null);
 
+    const isInfinite = books.length > 4;
+
+    // Si hay más de 4 libros, entonces repertimos la lista para el scroll "infinito"
+    const displayBooks = isInfinite? [...books, ...books, ...books] : books;
+
+    useEffect(()=>{
+        const container = scrollRef.current;
+        if(!container || !isInfinite)
+            return;
+
+        // Calculamos un solo bloque (el original)
+        const singleBlockWidth = container.scrollWidth / 3;
+
+        // Empezamos en el bloque del medio
+        container.scrollLeft = singleBlockWidth;
+
+        const handleScroll = () =>{
+            if(container.style.scrollBehavior === 'smooth')
+                return;
+
+            // Si llegamos al bloque 3, volvemos al 2
+            if(container.scrollLeft >= singleBlockWidth *2){
+                container.scrollLeft -= singleBlockWidth;
+            }
+            // Si llegamos al 1, volvemos al 2
+            else if(container.scrollLeft<=0){
+                container.scrollLeft += singleBlockWidth;
+            };
+        };
+
+        container.addEventListener('scroll', handleScroll);
+
+        return()=>{
+            container.removeEventListener('scroll', handleScroll);
+        }
+    },[isInfinite, books])
+
     const scroll = (direction: 'left' | 'right') =>{
-        if(scrollRef.current){
-            const scrollAmount = 700; // Pixeles
-            scrollRef.current.scrollBy({
-                left: direction === 'left'? -scrollAmount : scrollAmount,
-                behavior: 'smooth'
-            })
+        const container = scrollRef.current;
+
+        if(!container)
+            return;
+
+        // Animación solo para los botones
+        container.style.scrollBehavior = 'smooth';
+        const scrollAmount = 700;
+
+        container.scrollLeft += direction === 'left'?
+            -scrollAmount : scrollAmount
+
+        if(isInfinite){
+            setTimeout(()=>{
+                container.style.scrollBehavior = 'auto' // Quitamos el smooth
+                const singleBlockWidth = container.scrollWidth / 3;
+
+                if(container.scrollLeft >= singleBlockWidth * 2){
+                    container.scrollLeft -=singleBlockWidth;
+                }else if (container.scrollLeft <= 0){
+                    container.scrollLeft += singleBlockWidth;
+                }
+            }, 300) //ms
         }
     }
 
@@ -49,9 +103,10 @@ const CategoryRow = ({
                     className={style.book_list}
                 >
                     {
-                        books.map((book:Book)=>(
+                        displayBooks.map((book:Book, index)=>(
                             <li
-                                key={book.id_producto}
+                                // Evitamos renderizados bug por el triplicado de objetos
+                                key={`${book.id_producto}-${index}`}
                                 className={style.book_item}
                             >
                                 <BookCards
