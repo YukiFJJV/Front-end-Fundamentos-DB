@@ -46,10 +46,11 @@ export default function SearchWrapper({
         }
     };
 
+
     // Filtrar los libros por su nombre, autor o isbn
     const filteredResults = useMemo(()=>{
+        const cleanSearch = search.toLowerCase();
         return booksPool.filter((book) => {
-            const cleanSearch = search.toLowerCase();
             const coincidences = (
                 book.titulo.toLowerCase().includes(cleanSearch) ||
                 book.autor.toLowerCase().includes(cleanSearch) ||

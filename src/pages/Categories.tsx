@@ -1,15 +1,40 @@
 import { useState } from "react";
 import SearchWrapper from '../components/Search/SearchWrapper';
 import type Book from '../types/Book';
+import type Chapter from '../types/Chapter'
 import CategorySection from '../components/BookSections/CategorySection';
 import ProductDescription from '../components/BookSections/ProductDescription';
 
+// Capitulos de prueba
+const mockChapters: Chapter[] = [
+    {
+        id_capitulo: 1,
+        id_libro: 1,
+        numero_capitulo: 1,
+        titulo_capitulo: "Cenizas del Cielo",
+        contenido: "La ceniza caía del cielo de forma constante, como si el mundo entero estuviera en un duelo perpetuo. Kelsier caminaba por los campos de la plantación, con las botas hundiéndose en el barro grisáceo, observando a los skaa trabajar bajo un sol rojo y opresivo que apenas lograba penetrar la densa capa de humo. Llevaban siglos así, agachados, temerosos, convencidos de que su destino era servir al Lord Legislador hasta que la muerte les concediera el descanso. Kelsier se detuvo junto a uno de los barracones y sonrió. Era una sonrisa peligrosa, la de un hombre que ya no tenía nada que perder. Había sobrevivido a los Pozos de Hathsin, un lugar del que nadie regresaba, y ahora, en su interior, sentía el poder de los metales latiendo con fuerza. Había llegado el momento de enseñarles a los skaa que incluso los dioses pueden sangrar."
+    },
+    {
+        id_capitulo: 2,
+        id_libro: 1,
+        numero_capitulo: 2,
+        titulo_capitulo: "La Banda de Ladrones",
+        contenido: "En los húmedos e iluminados bajos fondos de Luthadel, el aire olía a hollín, sudor y secretos. Vin se acurrucó en la esquina de la taberna, intentando hacerse lo más invisible posible. Era una habilidad en la que había destacado desde niña: pasar desapercibida era la clave para no recibir palizas. Observaba a Camon, el líder de su banda, fanfarronear frente a un grupo de mercenarios. Vin sabía que el golpe que estaban planeando era un suicidio, pero no tenía voz ni voto. Lo único que tenía era su 'Suerte'. No sabía de dónde venía ni cómo funcionaba realmente, pero a veces, si se concentraba lo suficiente, podía empujar suavemente las emociones de las personas, hacer que confiaran un poco más, que estuvieran un poco menos enojados. Lo que Vin no sabía, y estaba a punto de descubrir esa misma noche cuando la puerta de la taberna se abrió de golpe dejando entrar las brumas, es que su 'Suerte' tenía un nombre: Alomancia."
+    },
+    {
+        id_capitulo: 3,
+        id_libro: 1,
+        numero_capitulo: 3,
+        titulo_capitulo: "El Secreto de los Metales",
+        contenido: "El frasco de cristal contenía un líquido turbio en el que flotaban diminutas esquirlas de metal. Vin lo miró con desconfianza. Kelsier le había explicado que el agua solo era para que no se atragantara con las virutas de estaño, peltre, hierro y acero. 'Bebe', le ordenó con esa sonrisa confiada que nunca parecía abandonarlo. Vin tragó el contenido. Al principio no sintió nada, solo el sabor metálico y rasposo bajando por su garganta. Entonces, Kelsier le enseñó a buscar en su interior. Le dijo que imaginara una reserva de energía en su estómago. Cuando Vin lo hizo, sintió de repente un calor abrasador, como si hubiera tragado brasas ardientes. 'Ahora, quema el estaño', susurró Kelsier. El mundo explotó a su alrededor. Pudo escuchar el aleteo de una polilla a tres habitaciones de distancia, la textura de la madera bajo sus dedos se volvió áspera y detallada, y la tenue luz de la vela la cegó por un instante. Había despertado."
+    }
+];
+
 // Datos de prueba (recordar borrarlos luego)
 const mockBooks: Book[] = [
-    // --- CATEGORÍA: Fantasía Épica (Ampliada para probar el scroll) ---
+    // --- PROBAR SCROLL ---
     {
         id_producto: 1,
-        tipo_producto: "Libro Físico",
         autor: "Brandon Sanderson",
         genero: "Fantasía Épica",
         editorial: "Nova",
@@ -21,7 +46,6 @@ const mockBooks: Book[] = [
     },
     {
         id_producto: 4,
-        tipo_producto: "Libro Físico",
         autor: "Brandon Sanderson",
         genero: "Fantasía Épica",
         editorial: "Nova",
@@ -33,7 +57,6 @@ const mockBooks: Book[] = [
     },
     {
         id_producto: 5,
-        tipo_producto: "Libro Físico",
         autor: "Brandon Sanderson",
         genero: "Fantasía Épica",
         editorial: "Nova",
@@ -45,7 +68,6 @@ const mockBooks: Book[] = [
     },
     {
         id_producto: 6,
-        tipo_producto: "Ebook",
         autor: "Patrick Rothfuss",
         genero: "Fantasía Épica",
         editorial: "Plaza & Janés",
@@ -57,7 +79,6 @@ const mockBooks: Book[] = [
     },
     {
         id_producto: 7,
-        tipo_producto: "Ebook",
         autor: "Patrick Rothfuss",
         genero: "Fantasía Épica",
         editorial: "Plaza & Janés",
@@ -69,7 +90,6 @@ const mockBooks: Book[] = [
     },
     {
         id_producto: 8,
-        tipo_producto: "Libro Físico",
         autor: "George R.R. Martin",
         genero: "Fantasía Épica",
         editorial: "Gigamesh",
@@ -81,7 +101,6 @@ const mockBooks: Book[] = [
     },
     {
         id_producto: 9,
-        tipo_producto: "Libro Físico",
         autor: "J.R.R. Tolkien",
         genero: "Fantasía Épica",
         editorial: "Minotauro",
@@ -93,7 +112,6 @@ const mockBooks: Book[] = [
     },
     {
         id_producto: 10,
-        tipo_producto: "AudioLibro",
         autor: "J.R.R. Tolkien",
         genero: "Fantasía Épica",
         editorial: "Minotauro",
@@ -104,10 +122,9 @@ const mockBooks: Book[] = [
         direccion_portada: "https://placehold.co/150x220?text=Dos+Torres"
     },
 
-    // --- OTRAS CATEGORÍAS (Para mantener variedad) ---
+    // --- OTRAS CATEGORÍAS ---
     {
         id_producto: 2,
-        tipo_producto: "Ebook",
         autor: "Frank Herbert",
         genero: "Ciencia Ficción",
         editorial: "DeBolsillo",
@@ -119,7 +136,6 @@ const mockBooks: Book[] = [
     },
     {
         id_producto: 3,
-        tipo_producto: "AudioLibro",
         autor: "Gabriel García Márquez",
         genero: "Realismo Mágico",
         editorial: "Literatura Random House",
@@ -157,6 +173,7 @@ export default function Categories(){
                 <ProductDescription
                     book={selectedBook}
                     onClose={() => setSelectedBook(null)}
+                    chapters={mockChapters}
                 />
             )}
         </>

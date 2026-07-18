@@ -21,7 +21,7 @@ const CategoryRow = ({
 }) =>{
     const scrollRef = useRef<HTMLUListElement>(null);
 
-    const isInfinite = books.length > 4;
+    const isInfinite = books.length > 5;
 
     // Si hay más de 4 libros, entonces repertimos la lista para el scroll "infinito"
     const displayBooks = isInfinite? [...books, ...books, ...books] : books;
@@ -66,7 +66,7 @@ const CategoryRow = ({
 
         // Animación solo para los botones
         container.style.scrollBehavior = 'smooth';
-        const scrollAmount = 700;
+        const scrollAmount = 700; // pixeles
 
         container.scrollLeft += direction === 'left'?
             -scrollAmount : scrollAmount
@@ -86,7 +86,7 @@ const CategoryRow = ({
     }
 
     return(
-        <div className={style.category_section}>
+        <section className={style.category_section}>
             <h2>{category}</h2>
             <div className={style.carousel_container}>
                 {/* Botón izq */}
@@ -127,7 +127,7 @@ const CategoryRow = ({
                     &#10095;
                 </button>
             </div>
-        </div>
+        </section>
     );
 }
 

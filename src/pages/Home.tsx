@@ -12,7 +12,6 @@ import { Link } from 'react-router-dom';
 const mockBooks: Book[] = [
     {
         id_producto: 1,
-        tipo_producto: "Libro Físico",
         autor: "Brandon Sanderson",
         genero: "Fantasía Épica",
         editorial: "Nova",
@@ -24,7 +23,6 @@ const mockBooks: Book[] = [
     },
     {
         id_producto: 2,
-        tipo_producto: "Ebook",
         autor: "Frank Herbert",
         genero: "Ciencia Ficción",
         editorial: "DeBolsillo",
@@ -36,7 +34,6 @@ const mockBooks: Book[] = [
     },
     {
         id_producto: 3,
-        tipo_producto: "AudioLibro",
         autor: "Gabriel García Márquez",
         genero: "Realismo Mágico",
         editorial: "Literatura Random House",

@@ -37,7 +37,7 @@ export default function FilteredResults({
         const allCategories = booksPool.map(book => book.genero)
 
         // Elimina todos los repetidos con Set y ... lo convierte en array de nuevo
-        return [... new Set(allCategories)];
+        return [... new Set(allCategories)].sort();
     }, [booksPool])
 
     const handleToggleCategory = (selectedCategory: string)=>{

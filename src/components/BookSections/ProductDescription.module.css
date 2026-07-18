@@ -127,7 +127,7 @@
     flex: 1; /* Ocupa el espacio restante */
 }
 
-.modal_info h3 {
+.modal_info h2 {
     font-family: 'Merriweather', serif;
     font-size: 3rem;
     margin: 0 0 10px 0;
