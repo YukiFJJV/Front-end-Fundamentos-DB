@@ -1,9 +1,10 @@
 import './App.css'
 import { createHashRouter, RouterProvider } from 'react-router-dom'
-import Home from './pages/Home';
+import Home from './pages/HomePage';
 import NotFound from './pages/NotFound';
 import Layout from './components/Layout/Layout';
-import Categories from './pages/Categories';
+import Categories from './pages/CategoriesPage';
+import ReadingPage from './pages/ReadingPage';
 
 const router = createHashRouter([
   {
@@ -17,6 +18,10 @@ const router = createHashRouter([
         {
           path: "/categories",
           element: <Categories/>
+        },
+        {
+          path: "/Reading/:titulo",
+          element: <ReadingPage/>
         },
         {
           path: "*",

@@ -11,12 +11,24 @@ export default function Chapters({chaptersByBook}:ChapterProps){
             <ul>
                 {
                     chaptersByBook.map(chapter=>(
-                        <li key={chapter.id_capitulo}>
-                            <h3>
-                                Capitulo {chapter.numero_capitulo}:
-                                {chapter.titulo_capitulo}
-                            </h3>
-                            <p>{chapter.sinapsis}</p>
+                        <li
+                            key={chapter.id_capitulo}
+                            className={styles.chapter_li}
+                        >
+                            <article>
+                                <header
+                                    className={styles.chapter_header}
+                                >
+                                    <h3>
+                                        Capitulo {chapter.numero_capitulo}:
+                                        &nbsp;{chapter.titulo_capitulo}
+                                    </h3>
+                                    <span>
+                                        {chapter.cantidad_paginas} pags. estimadas
+                                    </span>
+                                </header>
+                                <p>{chapter.sinapsis}</p>
+                            </article>
                         </li>
                     ))
                 }

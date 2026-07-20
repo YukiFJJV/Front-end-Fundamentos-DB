@@ -68,7 +68,7 @@ export default function SearchWrapper({
         <>
             {!showResults && topContent}
 
-            <div className={styles.search}>
+            <div className={`${styles.search} ${showResults ? styles.search_sticky : ""}`}>
                 <SearchBar
                     search={search}
                     onSearchChange={handleSearch}

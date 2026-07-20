@@ -1,53 +1,70 @@
 import { useEffect, useState} from "react";
-import type UserBooks from "../types/UserBooks";
+
 import BookCards from "../components/BookSections/BookCards";
-import type Book from '../types/Book';
 import ProductDescription from "../components/BookSections/ProductDescription";
 import TypeText from '../components/TypeText';
-import styles from "./Home.module.css";
+import styles from "./HomePage.module.css";
 import SearchWrapper from '../components/Search/SearchWrapper';
 import { Link } from 'react-router-dom';
-
-// Datos de prueba (recordar borrarlos luego)
-const mockBooks: Book[] = [
-    {
-        id_producto: 1,
-        autor: "Brandon Sanderson",
-        genero: "Fantasía Épica",
-        editorial: "Nova",
-        titulo: "El Imperio Final",
-        descripcion: "En un mundo donde la ceniza cae del cielo y un lord legislador domina con mano de hierro.",
-        isbn: "978-8417347291",
-        fecha_publicacion: "2006-07-17",
-        direccion_portada: "https://placehold.co/150x220?text=Mistborn"
-    },
-    {
-        id_producto: 2,
-        autor: "Frank Herbert",
-        genero: "Ciencia Ficción",
-        editorial: "DeBolsillo",
-        titulo: "Dune",
-        descripcion: "La especia debe fluir. Una aventura épica en el peligroso planeta desierto de Arrakis.",
-        isbn: "978-8497596824",
-        fecha_publicacion: "1965-08-01",
-        direccion_portada: "https://placehold.co/150x220?text=Dune"
-    },
-    {
-        id_producto: 3,
-        autor: "Gabriel García Márquez",
-        genero: "Realismo Mágico",
-        editorial: "Literatura Random House",
-        titulo: "Cien años de soledad",
-        descripcion: "Muchos años después, frente al pelotón de fusilamiento...",
-        isbn: "978-8439728398",
-        fecha_publicacion: "1967-05-30",
-        direccion_portada: "https://placehold.co/150x220?text=Cien años soledad"
-    }
-];
+import { useBookNavigation } from '../Hooks/useBookNavigation';
+import { useBookModal } from '../Hooks/useBookModal';
+import  { getBooks, getUserBooks, getChapters } from '../services/bookService';
+import type Chapter from "../types/Chapter";
+import type Book from '../types/Book';
+import type UserBooks from "../types/UserBooks";
+import LoadingPage from './LoadingPage';
 
 export default function Home(){
-    const [selectedBook, setSelectedBook] = useState<Book | null>(null);
+    const [books, setBooks] = useState<Book[]|[]>([]);
+    const [chapters, setChapters] = useState<Chapter[]|[]>([]);
     const [userLibrary, setUserLibrary] = useState<UserBooks[]>([]);
+    const { handleReadBook } = useBookNavigation();
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(()=>{
+        const loadData = async () =>{
+            setIsLoading(true);
+            try{
+                const[booksData, userLibraryData, chaptersData] = await Promise.all([
+                    getBooks(),
+                    getUserBooks(),
+                    getChapters()
+                ]);
+                setBooks(booksData as Book[]);
+                setUserLibrary(userLibraryData as UserBooks[]);
+                setChapters(chaptersData as Chapter[]);
+            } catch (error){
+                console.error("Error al cargar la información principal", error)
+            } finally{
+                setIsLoading(false)
+            }
+        };
+        loadData();
+    },[])
+
+    const {
+        selectedBook,
+        isFavorite,
+        handleSelectBook,
+        handleToggleFavorite,
+        closeBook,
+        handleToggleSave,
+        isSaved
+    } = useBookModal(userLibrary);
+
+    const continueReadingList = userLibrary.filter((item)=>item.estado === "LEYENDO");
+    const notReadList = userLibrary.filter(item => item.estado==="SIN LEER");
+
+    const currentUserBook = selectedBook
+        ? userLibrary.find((ub) => ub.libro.id_producto === selectedBook.id_producto) 
+        : null;
+
+    const typeWritter = (
+        <div className={styles.search_header}>
+            < TypeText/>
+            <span className={styles.cursor_text}>_</span>
+        </div>
+    )
 
     // Hacer una petición API a la DB
     useEffect(()=>{
@@ -63,24 +80,10 @@ export default function Home(){
         fetchBooks();
     },[]);
 
-    const continueReadingList = userLibrary.filter((item)=>item.estado === "LEYENDO");
-    const notReadList = userLibrary.filter(item => item.estado==="SIN LEER");
-
-    const handleSelectBook = (book:Book) =>{
-        setSelectedBook(book);
-    };
-
-    const typeWritter = (
-        <div className={styles.search_header}>
-            < TypeText/>
-            <span className={styles.cursor_text}>_</span>
-        </div>
-    )
-
     return(
         <>
             <SearchWrapper
-                booksPool={mockBooks}
+                booksPool={books}
                 onSelect={handleSelectBook}
                 topContent={typeWritter}
             >
@@ -92,10 +95,10 @@ export default function Home(){
                                 <span className={styles.see_all}>Ver todos &rarr;</span>
                             </div>
                             <div className={styles.continue_reading}>
-                                {mockBooks.map((userBook) => (
+                                {continueReadingList.map((userBook) => (
                                     <BookCards
-                                        key={userBook.id_producto}
-                                        book={userBook}
+                                        key={userBook.libro.id_producto}
+                                        book={userBook.libro}
                                         onSelect={handleSelectBook}
                                     />
                                 ))}
@@ -110,16 +113,17 @@ export default function Home(){
                             >
                                 <Link
                                     to='/Categories'
+                                    className={styles.link_style}
                                 >
                                     Ver todos &rarr;
                                 </Link>
                             </span>
                         </div>
                         <div className={styles.explore_more}>
-                            {mockBooks.map((userBook) => (
+                            {notReadList.map((userBook) => (
                                 <BookCards
-                                    key={userBook.id_producto}
-                                    book={userBook}
+                                    key={userBook.libro.id_producto}
+                                    book={userBook.libro}
                                     onSelect={handleSelectBook}
                                 />
                             ))}
@@ -144,10 +148,20 @@ export default function Home(){
             {/* Popup de descripción */}
             {selectedBook && (
                 <ProductDescription
+                    isSaved={isSaved}
+                    onToggleSave={handleToggleSave}
+                    onClickRead={()=>handleReadBook(selectedBook)}
+                    userBookInfo={currentUserBook ?? null}
                     book={selectedBook}
-                    onClose={() => setSelectedBook(null)}
+                    onClose={closeBook}
+                    chaptersByBook={chapters.filter(cap => cap.id_libro === selectedBook.id_producto)}
+                    onToggleFavorite={handleToggleFavorite}
+                    isFavorite={isFavorite}
                 />
             )}
+            <LoadingPage
+                isLoading={isLoading}
+            />
         </>
     );
 }

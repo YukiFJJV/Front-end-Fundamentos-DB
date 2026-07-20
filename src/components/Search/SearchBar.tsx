@@ -94,6 +94,8 @@ export default function SearchBar({
                         if (valor.trim().length === 0) {
                             onShowResultsChange(false);
                             setIsSearchActive(false); //Pasa el context al layout
+                        }else{
+                            setIsSearchActive(true)
                         }
                     }}
                     placeholder="Buscar por título, autor o ISBN..."
@@ -105,7 +107,6 @@ export default function SearchBar({
                         &times;
                     </button>
                 )}
-                
                 {children}
 
                 {/* El dropdown solo aparece cuando showResults es true */}

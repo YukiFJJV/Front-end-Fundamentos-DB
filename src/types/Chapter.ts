@@ -5,4 +5,5 @@ export default interface Chapter{
     titulo_capitulo: string;
     sinapsis: string;
     contenido: string;
+    cantidad_paginas: number;
 }

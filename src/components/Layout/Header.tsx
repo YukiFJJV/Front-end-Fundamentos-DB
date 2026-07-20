@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import logo from '../../assets/dibujo.svg';
+import logo from '../../assets/logo.svg';
 import styles from './Header.module.css';
 import {motion} from 'framer-motion'
 

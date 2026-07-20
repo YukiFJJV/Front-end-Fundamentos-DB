@@ -6,7 +6,7 @@
     margin-top: 30px;
     margin-bottom: 30px;
     position: relative; /* Mantiene la página sin saltos */
-    z-index: 30;
+    z-index: 9;
 }
 
 /* Resortes invisibles para centrar la barra */
@@ -67,6 +67,8 @@
                 margin-left 0.5s cubic-bezier(0.25, 0.8, 0.25, 1),
                 border-color 0.3s ease,
                 box-shadow 0.3s ease;
+
+    pointer-events: auto; /* Evitar que se desactive por el sticky*/
 }
 
 /* Estado Focus */

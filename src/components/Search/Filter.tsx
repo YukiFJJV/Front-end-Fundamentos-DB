@@ -1,11 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type Book from '../../types/Book';
 import styles from './Filter.module.css'
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface FilteredResultsProps{
     booksPool: Book[];
     selectedCategories: (string[]);
-    setSelectedCategories: (selectedCategory: string[]) => void;
+    setSelectedCategories: (selectedCategories: string[]) => void;
 };
 
 export default function FilteredResults({
@@ -81,35 +82,48 @@ export default function FilteredResults({
                 </svg>
             </button>
 
-            {
-                isFilterOpen && (
-                    <div className={styles.dropdown_menu}>
-                        <button
-                            id={styles.clear_filter}
-                            className={selectedCategories.length===0  ?
-                                "" : styles.active_btn}
-                            onClick={handleClear}
-                        >
-                            limpiar
-                        </button>
+            <AnimatePresence>
+                {
+                    isFilterOpen && (
+                        <motion.div
+                            className={styles.dropdown_menu}
+                            role='group'
 
-                        <div className={styles.categories_container}>
-                            {
-                                categories.map((category)=>(
-                                    <button
-                                        key={category}
-                                        className={selectedCategories.includes(category)
-                                            ? styles.active_btn : ""}
-                                        onClick={()=> handleToggleCategory(category)}
-                                    >
-                                        {category}
-                                    </button>
-                                ))
-                            }
-                        </div>
-                    </div>
-                )
-            }
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{
+                                duration: 0.25,
+                                ease: [0.22, 1, 0.36, 1] // Curva para que se sienta "elástica"
+                            }}
+                        >
+                            <button
+                                id={styles.clear_filter}
+                                className={selectedCategories.length===0  ?
+                                    "" : styles.active_btn}
+                                onClick={handleClear}
+                            >
+                                limpiar
+                            </button>
+
+                            <div className={styles.categories_container}>
+                                {
+                                    categories.map((category)=>(
+                                        <button
+                                            key={category}
+                                            className={selectedCategories.includes(category)
+                                                ? styles.active_btn : ""}
+                                            onClick={()=> handleToggleCategory(category)}
+                                        >
+                                            {category}
+                                        </button>
+                                    ))
+                                }
+                            </div>
+                        </motion.div>
+                    )
+                }
+            </AnimatePresence>
         </div>
     );
 }
