@@ -2,7 +2,7 @@
 .search_container {
     display: flex;
     width: 100%;
-    height: 50px;
+    height: 90%;
     margin-top: 30px;
     margin-bottom: 30px;
     position: relative; /* Mantiene la página sin saltos */
@@ -34,7 +34,7 @@
     border-color: #9628aa; /* Mantiene el borde morado */
 }
 
-/* Media query para móviles: quita los resortes y ocupa el 100% */
+/* Quita los resortes y ocupa el 100% */
 @media (max-width: 768px) {
     .search_container.search_active::before,
     .search_container.search_active::after {
@@ -142,6 +142,7 @@
     top: calc(100% + 10px);
     left: 0;
     width: 100%;
+    height: 100vh;
     box-sizing: border-box;
     background-color: rgba(101, 25, 104, 0.2);
     border-radius: 8px;

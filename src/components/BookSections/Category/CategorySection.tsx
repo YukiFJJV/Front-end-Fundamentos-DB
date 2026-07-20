@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef } from 'react';
-import type Book from '../../types/Book';
+import type Book from '../../../types/Book';
 import style from './CategorySection.module.css'
-import BookCards from './BookCards';
+import BookCards from '../BookCards';
 
 interface CategorySectionProps{
     poolBooks: Book[]
@@ -45,6 +45,7 @@ const CategoryRow = ({
             if(container.scrollLeft >= singleBlockWidth *2){
                 container.scrollLeft -= singleBlockWidth;
             }
+
             // Si llegamos al 1, volvemos al 2
             else if(container.scrollLeft<=0){
                 container.scrollLeft += singleBlockWidth;

@@ -1,152 +1,144 @@
-/* ReadingPage.module.css */
+.page_wrapper {
+    --bg-dark-purple: #160a22;
+    --text-primary: #ECE6F2;
+    --accent-purple: #a78bfa;
+    --border-color: #3b2a54;
 
-/* Contenedor principal que reemplaza al <body> para mantenerlo aislado */
-.pageWrapper {
-  /* Variables locales para este módulo */
-  --bg-dark-purple: #160a22; 
-  --text-primary: #e4dff0;   
-  --accent-purple: #a78bfa;  
-  --border-color: #3b2a54;   
-  
-  --font-reading: 'Georgia', 'Merriweather', 'Times New Roman', serif;
-  --font-ui: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    --font-reading: 'Georgia', 'Merriweather', 'Times New Roman', serif;
+    --font-ui: 'Inter', 'Segoe UI', system-ui, sans-serif;
 
-  background-color: var(--bg-dark-purple);
-  color: var(--text-primary);
-  min-height: 100vh; /* Asegura que el fondo cubra toda la pantalla */
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+    background-color: var(--bg-dark-purple);
+    color: var(--text-primary);
+    min-height: 100vh; /* Asegura que el fondo cubra toda la pantalla */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-.readingContainer {
-  max-width: 750px; 
-  margin: 0 auto;
-  padding: 3rem 1.5rem;
-  font-family: var(--font-reading);
-  flex: 1; /* Permite que el contenedor crezca */
+.reading_container {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    font-family: var(--font-reading);
+    flex: 1; /* Permite que el contenedor crezca */
 }
 
-.readingHeader {
-  text-align: center;
-  margin-bottom: 4rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid var(--border-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
+.reading_header {
+    text-align: center;
+    margin-bottom: 4rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }
 
-.readingHeader h1 {
-  font-family: var(--font-ui);
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin: 0;
-  color: #ffffff;
-  letter-spacing: -0.02em;
+.reading_header h1 {
+    font-family: var(--font-ui);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
 }
 
-.favoriteBadge {
-  font-family: var(--font-ui);
-  background-color: rgba(167, 139, 250, 0.15);
-  color: var(--accent-purple);
-  padding: 0.4rem 1rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+.favorite_badge {
+    font-family: var(--font-ui);
+    background-color: rgba(167, 139, 250, 0.15);
+    color: var(--accent-purple);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 .chapter {
-  margin-bottom: 5rem;
+    margin-bottom: 5rem;
 }
 
 .chapter h2 {
-  font-family: var(--font-ui);
-  font-size: 1.75rem;
-  color: var(--accent-purple);
-  margin-bottom: 2.5rem;
-  text-align: center;
-  font-weight: 600;
+    font-family: var(--font-ui);
+    font-size: 1.75rem;
+    color: var(--accent-purple);
+    margin-bottom: 2.5rem;
+    text-align: center;
+    font-weight: 600;
 }
 
-.chapterText {
-  font-size: 1.25rem;
-  line-height: 1.8;
-  color: var(--text-primary);
-  text-align: left;
+.chapter_text {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    text-align: left;
+    font-weight: 500;
 }
 
-.observableParagraph {
-  margin-bottom: 1.2rem;
-  transition: background-color 0.3s ease;
-}
-
-.observableParagraph + .observableParagraph {
-  text-indent: 2rem;
-  margin-top: -1.2rem; 
+.observable_paragraph {
+    margin-bottom: 1.5rem;
+    transition: background-color 0.3s ease;
 }
 
 /* Contenedor centralizado para estados (Carga, Error, No Autorizado) */
-.statusContainer {
-  font-family: var(--font-ui);
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 2rem;
-  min-height: 100vh;
-  background-color: var(--bg-dark-purple);
-  color: var(--text-primary);
+.status_container {
+    font-family: var(--font-ui);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    min-height: 100vh;
+    background-color: var(--bg-dark-purple);
+    color: var(--text-primary);
 }
 
-.statusContainer h2 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+.status_container h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
 }
 
-.statusContainer p {
-  font-size: 1.1rem;
-  opacity: 0.8;
-  margin-bottom: 2rem;
+.status_container p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    margin-bottom: 2rem;
 }
 
-.statusButton {
-  background-color: var(--accent-purple);
-  color: #160a22; 
-  border: none;
-  padding: 0.8rem 2rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.2s ease;
+.status_button {
+    background-color: var(--accent-purple);
+    color: #160a22;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    width: 150px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.statusButton:hover {
-  background-color: #8b5cf6;
-  transform: translateY(-2px);
+.status_button:hover {
+    background-color: #8b5cf6;
+    transform: translateY(-2px);
 }
 
 @media (max-width: 600px) {
-  .readingContainer {
-    padding: 1.5rem 1rem;
-  }
-  
-  .readingHeader h1 {
-    font-size: 1.8rem;
-  }
+    .reading_container {
+        padding: 1.5rem 1rem;
+    }
+    .reading_header h1 {
+        font-size: 1.8rem;
+    }
 
-  .chapter h2 {
-    font-size: 1.4rem;
-  }
+    .chapter h2 {
+        font-size: 1.4rem;
+    }
 
-  .chapterText {
-    font-size: 1.1rem; 
-    line-height: 1.6;
-  }
+    .chapter_text {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
 }

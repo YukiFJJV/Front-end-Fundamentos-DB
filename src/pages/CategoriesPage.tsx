@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from './CategoriesPage.module.css'
 import SearchWrapper from '../components/Search/SearchWrapper';
-import CategorySection from '../components/BookSections/CategorySection';
+import CategorySection from '../components/BookSections/Category/CategorySection';
 import ProductDescription from '../components/BookSections/ProductDescription';
 import  { getBooks, getChapters, getUserBooks } from '../services/bookService';
 import { useBookNavigation } from '../Hooks/useBookNavigation'
@@ -9,6 +9,7 @@ import { useBookModal } from '../Hooks/useBookModal';
 import type UserBooks from "../types/UserBooks";
 import type Book from '../types/Book';
 import type Chapter from '../types/Chapter';
+import LoadingPage from "./LoadingPage";
 
 export default function Categories(){
     const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
@@ -80,6 +81,10 @@ export default function Categories(){
                     onClickRead={()=> handleReadBook(selectedBook)}
                 />
             )}
+
+            <LoadingPage
+                isLoading={isLoading}
+            />
         </div>
     );
 }

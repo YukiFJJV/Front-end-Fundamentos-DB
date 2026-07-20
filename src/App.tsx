@@ -24,6 +24,10 @@ const router = createHashRouter([
           element: <ReadingPage/>
         },
         {
+          path: "/Reading/:titulo/:capitulo?",
+          element: <ReadingPage/>
+        },
+        {
           path: "*",
           element: <NotFound />
         }

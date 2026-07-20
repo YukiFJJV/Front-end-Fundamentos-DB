@@ -275,11 +275,6 @@
     z-index: 10;
 }
 
-.loading_chapters{
-    margin-top: 50vh;
-    padding: 0 40px 50px 40px;
-}
-
 /* --- RESPONSIVE PARA TÉLEFONOS --- */
 @media (max-width: 600px) {
     .modal_layout {

@@ -4,11 +4,14 @@ import type Book from '../types/Book';
 export function useBookNavigation(){
     const navigate = useNavigate();
 
-    // Recibimos el libro directamente como parámetro
-    const handleReadBook = (book: Book | null) => {
+    // Agregamos el capítulo como parámetro opcional
+    const handleReadBook = (book: Book | null, chapter?: number) => {
         if (book) {
-            const tituloParaUrl = encodeURIComponent(book.titulo);
-            navigate(`/Reading/${tituloParaUrl}`);
+            const urlTitle = encodeURIComponent(book.titulo);
+            // Si hay capítulo arma el link completo, si no, manda al generico
+            const targetUrl = chapter ?
+                `/Reading/${urlTitle}/${chapter}` : `/Reading/${urlTitle}`;
+            navigate(targetUrl);
         }
     };
 

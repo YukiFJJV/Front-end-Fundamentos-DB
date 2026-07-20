@@ -265,6 +265,8 @@ export default function ProductDescription({
                     <p className={styles.modal_description}>{book.descripcion}</p>
                     <Chapters
                         chaptersByBook={chaptersByBook}
+                        actualChapter={userBookInfo?.capitulo_actual ?? null}
+                        selectedBook={book}
                     />
                 </div>
             </div>

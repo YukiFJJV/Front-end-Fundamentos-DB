@@ -28,7 +28,6 @@ export default function Typewriter() {
         let erasing = false;
         let timeOutId: ReturnType<typeof setTimeout>;
 
-        // arrow function
         const writeText = () => {
             if (!textRef.current) return;
 
