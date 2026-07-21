@@ -95,6 +95,7 @@ const CategoryRow = ({
                     className={style.scroll_button}
                     onClick={()=> scroll('left')}
                     aria-label="Scroll left"
+                    style={{ visibility: books.length > 4 ? 'visible' : 'hidden' }}
                 >
                     &#10094;
                 </button>
@@ -124,6 +125,7 @@ const CategoryRow = ({
                     className={style.scroll_button}
                     onClick={()=> scroll('right')}
                     aria-label="Scroll right"
+                    style={{ visibility: books.length > 4 ? 'visible' : 'hidden' }}
                 >
                     &#10095;
                 </button>

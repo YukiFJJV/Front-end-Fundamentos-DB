@@ -119,7 +119,7 @@ export default function Sidebar({isOpen, onClose}: SidebarProps){
                                 <span>Personal</span>
                             </Link>
                         </li>
-                        <li>
+                        <li className={styles.settings_item}>
                             <Link
                                 to="/Settings"
                                 className={styles.link_style}

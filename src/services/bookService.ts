@@ -79,3 +79,35 @@ export const getChaptersByBook = async (
     };
     return response.json();
 }
+
+export const toggleFavoriteBook = async (bookId: number, isFavorite: boolean) => {
+    if(USE_MOCK){
+        return Promise.resolve({ success: true });
+    }
+
+    const response = await fetch('/api/users/favorites', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json'},
+        body: JSON.stringify({ bookId, isFavorite })
+    });
+    if(!response.ok){
+        throw new Error("Error al actualizar el estado de favorito");
+    }
+    return response.json();
+};
+
+export const toggleSaveBook = async (bookId: number, isSaved: boolean) => {
+    if(USE_MOCK){
+        return Promise.resolve({ success: true });
+    }
+
+    const response = await fetch('/api/users/saved', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json'},
+        body: JSON.stringify({ bookId, isSaved })
+    });
+    if(!response.ok){
+        throw new Error("Error al actualizar el estado de guardado");
+    }
+    return response.json();
+};

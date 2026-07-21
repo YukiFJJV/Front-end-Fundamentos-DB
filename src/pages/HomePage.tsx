@@ -1,11 +1,9 @@
-import { useEffect, useState} from "react";
+import { useEffect, useState, useMemo } from "react";
 
-import BookCards from "../components/BookSections/BookCards";
 import ProductDescription from "../components/BookSections/ProductDescription";
 import TypeText from '../components/TypeText';
 import styles from "./HomePage.module.css";
 import SearchWrapper from '../components/Search/SearchWrapper';
-import { Link } from 'react-router-dom';
 import { useBookNavigation } from '../Hooks/useBookNavigation';
 import { useBookModal } from '../Hooks/useBookModal';
 import  { getBooks, getUserBooks, getChapters } from '../services/bookService';
@@ -13,6 +11,7 @@ import type Chapter from "../types/Chapter";
 import type Book from '../types/Book';
 import type UserBooks from "../types/UserBooks";
 import LoadingPage from './LoadingPage';
+import UserSection from '../components/BookSections/UserSection/UserSection';
 
 export default function Home(){
     const [books, setBooks] = useState<Book[]|[]>([]);
@@ -52,12 +51,31 @@ export default function Home(){
         isSaved
     } = useBookModal(userLibrary);
 
-    const continueReadingList = userLibrary.filter((item)=>item.estado === "LEYENDO");
-    const notReadList = userLibrary.filter(item => item.estado==="SIN LEER");
+    const notReadList = useMemo(() => {
+        // Filtramos los libros que no están en la biblioteca del usuario
+        const unreadBooks = books.filter(
+            (book) => !userLibrary.some((userBook) => userBook.libro.id_producto === book.id_producto)
+        );
 
-    const currentUserBook = selectedBook
-        ? userLibrary.find((ub) => ub.libro.id_producto === selectedBook.id_producto) 
-        : null;
+        // Convertimos esos libros al formato UserBooks
+        return unreadBooks.map((book) => ({
+            id_usuario: 1,
+            libro: book,
+            estado: "SIN LEER",
+            es_comprado: false,
+            es_favorito: false,
+            capitulo_actual: 1,
+            parrafo_actual: 0,
+            progreso: 0
+        } as UserBooks));
+    }, [books, userLibrary]);
+
+    const currentUserBook = useMemo(
+        () => selectedBook
+            ? userLibrary.find((ub) => ub.libro.id_producto === selectedBook.id_producto) 
+            : null,
+        [userLibrary, selectedBook]
+    );
 
     const typeWritter = (
         <div className={styles.search_header}>
@@ -66,20 +84,6 @@ export default function Home(){
         </div>
     )
 
-    // Hacer una petición API a la DB
-    useEffect(()=>{
-        const fetchBooks = async () =>{
-            try{
-                const response = await fetch('/api/users/books');
-                const data = await response.json();
-                setUserLibrary(data);
-            }catch(error){
-                console.error("Error al importar los libros", error);
-            }
-        };
-        fetchBooks();
-    },[]);
-
     return(
         <>
             <SearchWrapper
@@ -87,63 +91,35 @@ export default function Home(){
                 onSelect={handleSelectBook}
                 topContent={typeWritter}
             >
-                <div className={styles.fade_in}>
-                    {continueReadingList.length > 0 && (
-                        <section>
-                            <div className={styles.section_header}>
-                                <h2>Continuar leyendo...</h2>
-                                <span className={styles.see_all}>Ver todos &rarr;</span>
-                            </div>
-                            <div className={styles.continue_reading}>
-                                {continueReadingList.map((userBook) => (
-                                    <BookCards
-                                        key={userBook.libro.id_producto}
-                                        book={userBook.libro}
-                                        onSelect={handleSelectBook}
-                                    />
-                                ))}
-                            </div>
+                <div role='group' className={styles.fade_in}>
+                    <UserSection
+                        listToShow={userLibrary}
+                        handleSelectBook={handleSelectBook}
+                        linkTo="/Personal"
+                        isAtHome={true}
+                    />
+
+                    <UserSection
+                        listToShow={notReadList}
+                        handleSelectBook={handleSelectBook}
+                        linkTo="/Categories"
+                        isAtHome={true}
+                    />
+                    <footer className={styles.home_footer}>
+                        <section className={styles.mision}>
+                            <h3>Mision</h3>
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam pariatur tenetur voluptatum magnam totam dolore natus? Unde laudantium, dolorum magni saepe nesciunt, illo dignissimos illum quaerat asperiores, voluptatibus error quidem.
+                            </p>
                         </section>
-                    )}
-                    <section>
-                        <div className={styles.section_header}>
-                            <h2>Explora más obras!</h2>
-                            <span
-                                className={styles.see_all}
-                            >
-                                <Link
-                                    to='/Categories'
-                                    className={styles.link_style}
-                                >
-                                    Ver todos &rarr;
-                                </Link>
-                            </span>
-                        </div>
-                        <div className={styles.explore_more}>
-                            {notReadList.map((userBook) => (
-                                <BookCards
-                                    key={userBook.libro.id_producto}
-                                    book={userBook.libro}
-                                    onSelect={handleSelectBook}
-                                />
-                            ))}
-                            </div>
+                        <section className={styles.vision}>
+                            <h3>Vision</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur odio quod eaque at iusto molestiae non! Aperiam maxime earum aspernatur, repudiandae adipisci quidem iusto quis eveniet eaque, facilis, incidunt inventore.
+                            </p>
                         </section>
-                        <footer className={styles.home_footer}>
-                            <section className={styles.mision}>
-                                <h3>Mision</h3>
-                                <p>
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam pariatur tenetur voluptatum magnam totam dolore natus? Unde laudantium, dolorum magni saepe nesciunt, illo dignissimos illum quaerat asperiores, voluptatibus error quidem.
-                                </p>
-                            </section>
-                            <section className={styles.vision}>
-                                <h3>Vision</h3>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur odio quod eaque at iusto molestiae non! Aperiam maxime earum aspernatur, repudiandae adipisci quidem iusto quis eveniet eaque, facilis, incidunt inventore.
-                                </p>
-                            </section>
-                        </footer>
-                    </div>
+                    </footer>
+                </div>
             </SearchWrapper>
             {/* Popup de descripción */}
             {selectedBook && (

@@ -14,7 +14,7 @@
     border: solid transparent;
     border-radius: 8px;
     padding: 8px;
-    color: #4b5563;
+    color: var(--text);
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     margin-right: 27px;
@@ -22,23 +22,31 @@
 
 #open_filter:hover,
 #open_filter.filter_is_open{
-    background-color: #f3f4f618;
-    color: rgb(118, 228, 255);
+    background-color: var(--accent-bg);
+    color: var(--accent);
 }
 
 /* Menú flotante (Dropdown) */
 .dropdown_menu {
     position: absolute;
-    top: calc(100% + 8px); /* 8px de separación bajo el botón */
+    top: calc(100% + 8px); 
     right: 100%;
     margin-right: 8px;
     width: 280px;
-    background-color: rgb(43, 23, 44);
-    border: solid transparent;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
     border-radius: 12px;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 25px -5px var(--shadow-color), 0 8px 10px -6px var(--shadow-color);
     padding: 16px;
     z-index: 30;
+
+    transform-origin: top right;
+    animation: growDiagonal 0.2s ease-out forwards;
+}
+
+@keyframes growDiagonal {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
 }
 
 /* Botón de limpieza*/
@@ -56,7 +64,7 @@
     align-items: center;
     justify-content: center;
 
-    color: #9ca3af;
+    color: var(--text);
     background: transparent;
     border: none;
     border-radius: 9999px;
@@ -69,13 +77,13 @@
 }
 
 #clear_filter:hover {
-    color: #ef4444; /* Para indicar borrar */
-    background-color: #fee2e2;
+    color: var(--bg);
+    background-color: var(--accent);
 }
 
 /* Cuando hay filtros */
 #clear_filter.active_btn {
-    color: #ef4444;
+    color: var(--accent);
 }
 
 /* Contenedor de los botones de categoría */
@@ -83,15 +91,15 @@
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-top: 28px; /* Espacio para no chocar con la X */
+    margin-top: 28px; 
 }
 
 /* Botones individuales de categoría */
 .categories_container button {
-    background-color: #f3f4f613;
-    color: #fff;
+    background-color: var(--code-bg);
+    color: var(--text-h);
     border: 1px solid transparent;
-    border-radius: 9999px; /* Aspecto de píldora redonda */
+    border-radius: 9999px; 
     padding: 6px 14px;
     font-size: 0.85rem;
     font-weight: 500;
@@ -102,24 +110,21 @@
 .categories_container button:hover {
     background: linear-gradient(
         to left,
-        rgba(174, 53, 196, 0.7) 0%,
-        rgba(150, 40, 170, 0.5) 60%,
-        rgba(150, 40, 170, 0.2) 80%,
-        rgba(150, 40, 170, 0.005) 100%
+        var(--accent-bg) 0%,
+        transparent 100%
     );
     background-clip: padding-box;
-    color: rgb(118, 228, 255);
+    color: var(--accent);
 }
 
 /* Estado ACTIVO para las categorías y botones */
 .active_btn,
 .categories_container button.active_btn {
-    background-color: #9628aa;
-    color: rgb(118, 228, 255);
-    border-color: #9628aa;
+    background-color: var(--accent);
+    color: var(--bg);
+    border-color: var(--accent);
 }
 
 .categories_container button.active_btn:hover {
-    background-color: #7a1f8c;
-    border-color: #7a1f8c;
+    filter: brightness(0.9);
 }

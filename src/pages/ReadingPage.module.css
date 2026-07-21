@@ -1,14 +1,9 @@
 .page_wrapper {
-    --bg-dark-purple: #160a22;
-    --text-primary: #ECE6F2;
-    --accent-purple: #a78bfa;
-    --border-color: #3b2a54;
-
     --font-reading: 'Georgia', 'Merriweather', 'Times New Roman', serif;
     --font-ui: 'Inter', 'Segoe UI', system-ui, sans-serif;
 
-    background-color: var(--bg-dark-purple);
-    color: var(--text-primary);
+    background-color: var(--bg);
+    color: var(--text);
     min-height: 100vh; /* Asegura que el fondo cubra toda la pantalla */
     width: 100%;
     display: flex;
@@ -27,7 +22,7 @@
     text-align: center;
     margin-bottom: 4rem;
     padding-bottom: 2rem;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,14 +34,14 @@
     font-size: 2.5rem;
     font-weight: 700;
     margin: 0;
-    color: var(--text-primary);
+    color: var(--text-h);
     letter-spacing: -0.02em;
 }
 
 .favorite_badge {
     font-family: var(--font-ui);
-    background-color: rgba(167, 139, 250, 0.15);
-    color: var(--accent-purple);
+    background-color: var(--accent-bg);
+    color: var(--accent);
     padding: 0.4rem 1rem;
     border-radius: 20px;
     font-size: 0.85rem;
@@ -62,7 +57,7 @@
 .chapter h2 {
     font-family: var(--font-ui);
     font-size: 1.75rem;
-    color: var(--accent-purple);
+    color: var(--accent);
     margin-bottom: 2.5rem;
     text-align: center;
     font-weight: 600;
@@ -71,7 +66,7 @@
 .chapter_text {
     font-size: 1.125rem;
     line-height: 1.8;
-    color: var(--text-primary);
+    color: var(--text);
     text-align: left;
     font-weight: 500;
 }
@@ -92,8 +87,8 @@
     text-align: center;
     padding: 2rem;
     min-height: 100vh;
-    background-color: var(--bg-dark-purple);
-    color: var(--text-primary);
+    background-color: var(--bg);
+    color: var(--text);
 }
 
 .status_container h2 {
@@ -108,8 +103,8 @@
 }
 
 .status_button {
-    background-color: var(--accent-purple);
-    color: #160a22;
+    background-color: var(--accent);
+    color: var(--bg);
     border: none;
     padding: 0.8rem 2rem;
     font-size: 0.7rem;
@@ -117,11 +112,11 @@
     width: 150px;
     border-radius: 8px;
     cursor: pointer;
-    transition: transform 0.2s ease, background-color 0.2s ease;
+    transition: transform 0.2s ease, filter 0.2s ease;
 }
 
 .status_button:hover {
-    background-color: #8b5cf6;
+    filter: brightness(1.1);
     transform: translateY(-2px);
 }
 

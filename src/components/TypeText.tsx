@@ -1,18 +1,24 @@
 import { useEffect, useRef } from "react";
 import styles from './TypeText.module.css';
 
-export default function Typewriter() {
+interface TypeWitterProps{
+    isAtLibrary?: boolean
+}
+
+export default function Typewriter({
+    isAtLibrary
+}:TypeWitterProps) {
     const textRef = useRef<HTMLSpanElement | null>(null);
 
     useEffect(() => {
-        const phrases = [
+        const phrases = !isAtLibrary? [
             "Compilando: Conocimiento...",
             "El conocimiento a tu disposición",
             "La pluma es más fuerte que la espada",
             "Conoce tu historia, no la repitas",
             "Redacta tus sueños",
             "Descubre mundos",
-            "Donde los libros enseñan Stacks",
+            "Acumula stacks de libros",
             "Explora nuevas ideas",
             "La lectura te hace libre",
             "Código y poesía",
@@ -20,6 +26,12 @@ export default function Typewriter() {
             "Tu próxima aventura",
             "Sabiduría en cada línea",
             "Crea tu propio camino"
+        ]:[
+            "Tu libreria",
+            "Tus mundos",
+            "Tus lugares seguros en libros",
+            "Decide tu proxima historia",
+            "Tus heroes están aquí"
         ];
 
         // Inicializamos en un índice aleatorio basado en el tamaño del arreglo
@@ -70,7 +82,7 @@ export default function Typewriter() {
         return () => {
             clearTimeout(timeOutId);
         }
-    }, [])
+    }, [isAtLibrary])
 
     return (
         <span

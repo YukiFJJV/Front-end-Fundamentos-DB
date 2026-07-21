@@ -62,8 +62,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    /* Fondo oscuro semitransparente en lugar del claro casi invisible */
-    background-color: rgba(12, 5, 20, 0.7); 
+    background-color: var(--shadow-color); 
     backdrop-filter: blur(3px); /* Toque premium: desenfoca el fondo */
     z-index: 5;
 

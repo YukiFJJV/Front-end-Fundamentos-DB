@@ -60,12 +60,186 @@ export const mockChapters: Chapter[] = [
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum repudiandae porro, dicta ipsa repellat dolorem quidem maxime adipisci assumenda magni facere maiores facilis nostrum amet ea, quas optio rerum laboriosam.
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit nemo voluptatum non voluptates asperiores exercitationem? Adipisci maxime illo, sit eveniet minima autem esse vel suscipit harum excepturi? Optio, exercitationem aperiam!`,
         cantidad_paginas: 49
+    },
+    {
+        id_capitulo: 6,
+        id_libro: 2,
+        numero_capitulo: 1,
+        titulo_capitulo: "Una trampa en Arrakis",
+        sinapsis: "El duque Leto Atreides acepta el feudo del peligroso planeta desértico Arrakis, sabiendo que es una trampa orquestada por sus enemigos, los Harkonnen.",
+        contenido: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus culpa iusto ullam maiores quia odio delectus vel eligendi, ipsum amet. Unde molestiae nostrum optio temporibus vel! Architecto repellendus vitae excepturi.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure dolorem, ad quibusdam aspernatur eaque atque sequi dolorum reprehenderit! Voluptates illo cum rem cupiditate cumque doloremque enim deserunt asperiores non libero.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore reiciendis autem, harum quasi, quam iure, sed voluptas illo tempora beatae asperiores! Deleniti delectus ad modi distinctio, assumenda quia odit magni?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla veniam cum expedita error ratione quasi consectetur, quod consequatur! Consequatur, ratione eaque. Consequatur assumenda omnis tenetur quidem minus rem neque? Consequatur.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut laborum, quibusdam exercitationem nulla, tempora fugit illo, quas ullam ipsam rem vitae! Doloribus culpa magni aut soluta, natus accusantium reprehenderit sapiente?
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione ab eum, itaque alias sequi vero, blanditiis impedit qui sed expedita, ipsum sunt corrupti reiciendis iusto autem doloribus animi nemo quis.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis deleniti repudiandae, provident sit ipsa et deserunt voluptates odio corrupti sapiente voluptatum iure nobis fugiat, vero dolorem a non velit aut.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit sapiente dicta ea vel dignissimos ullam et tempora nobis animi voluptatibus similique, totam eos atque obcaecati nisi veniam delectus asperiores voluptates.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, sint. Non assumenda, fuga distinctio facere voluptatum id doloremque sunt, iusto necessitatibus inventore praesentium officia culpa libero labore dicta ullam in.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni dolorem laborum voluptatem ex magnam tempore exercitationem architecto sed, velit consequuntur cupiditate provident autem, illum doloremque, quis nesciunt repellat? Consectetur, incidunt.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum repudiandae porro, dicta ipsa repellat dolorem quidem maxime adipisci assumenda magni facere maiores facilis nostrum amet ea, quas optio rerum laboriosam.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit nemo voluptatum non voluptates asperiores exercitationem? Adipisci maxime illo, sit eveniet minima autem esse vel suscipit harum excepturi? Optio, exercitationem aperiam!`,
+        cantidad_paginas: 42
+    },
+    {
+        id_capitulo: 7,
+        id_libro: 2,
+        numero_capitulo: 2,
+        titulo_capitulo: "La caja de dolor",
+        sinapsis: "Paul Atreides se enfrenta a la reverenda madre Mohiam y a la prueba del Gom Jabbar para demostrar que sus instintos humanos dominan a los animales.",
+        contenido: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus culpa iusto ullam maiores quia odio delectus vel eligendi, ipsum amet. Unde molestiae nostrum optio temporibus vel! Architecto repellendus vitae excepturi.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure dolorem, ad quibusdam aspernatur eaque atque sequi dolorum reprehenderit! Voluptates illo cum rem cupiditate cumque doloremque enim deserunt asperiores non libero.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore reiciendis autem, harum quasi, quam iure, sed voluptas illo tempora beatae asperiores! Deleniti delectus ad modi distinctio, assumenda quia odit magni?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla veniam cum expedita error ratione quasi consectetur, quod consequatur! Consequatur, ratione eaque. Consequatur assumenda omnis tenetur quidem minus rem neque? Consequatur.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut laborum, quibusdam exercitationem nulla, tempora fugit illo, quas ullam ipsam rem vitae! Doloribus culpa magni aut soluta, natus accusantium reprehenderit sapiente?
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione ab eum, itaque alias sequi vero, blanditiis impedit qui sed expedita, ipsum sunt corrupti reiciendis iusto autem doloribus animi nemo quis.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis deleniti repudiandae, provident sit ipsa et deserunt voluptates odio corrupti sapiente voluptatum iure nobis fugiat, vero dolorem a non velit aut.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit sapiente dicta ea vel dignissimos ullam et tempora nobis animi voluptatibus similique, totam eos atque obcaecati nisi veniam delectus asperiores voluptates.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, sint. Non assumenda, fuga distinctio facere voluptatum id doloremque sunt, iusto necessitatibus inventore praesentium officia culpa libero labore dicta ullam in.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni dolorem laborum voluptatem ex magnam tempore exercitationem architecto sed, velit consequuntur cupiditate provident autem, illum doloremque, quis nesciunt repellat? Consectetur, incidunt.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum repudiandae porro, dicta ipsa repellat dolorem quidem maxime adipisci assumenda magni facere maiores facilis nostrum amet ea, quas optio rerum laboriosam.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit nemo voluptatum non voluptates asperiores exercitationem? Adipisci maxime illo, sit eveniet minima autem esse vel suscipit harum excepturi? Optio, exercitationem aperiam!`,
+        cantidad_paginas: 38
+    },
+    {
+        id_capitulo: 8,
+        id_libro: 2,
+        numero_capitulo: 3,
+        titulo_capitulo: "Viaje al desierto",
+        sinapsis: "La familia Atreides abandona su hogar ancestral en Caladan y llega al abrasador planeta Arrakis, enfrentándose de inmediato a intrigas palaciegas y al rigor del clima.",
+        contenido: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus culpa iusto ullam maiores quia odio delectus vel eligendi, ipsum amet. Unde molestiae nostrum optio temporibus vel! Architecto repellendus vitae excepturi.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure dolorem, ad quibusdam aspernatur eaque atque sequi dolorum reprehenderit! Voluptates illo cum rem cupiditate cumque doloremque enim deserunt asperiores non libero.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore reiciendis autem, harum quasi, quam iure, sed voluptas illo tempora beatae asperiores! Deleniti delectus ad modi distinctio, assumenda quia odit magni?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla veniam cum expedita error ratione quasi consectetur, quod consequatur! Consequatur, ratione eaque. Consequatur assumenda omnis tenetur quidem minus rem neque? Consequatur.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut laborum, quibusdam exercitationem nulla, tempora fugit illo, quas ullam ipsam rem vitae! Doloribus culpa magni aut soluta, natus accusantium reprehenderit sapiente?
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione ab eum, itaque alias sequi vero, blanditiis impedit qui sed expedita, ipsum sunt corrupti reiciendis iusto autem doloribus animi nemo quis.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis deleniti repudiandae, provident sit ipsa et deserunt voluptates odio corrupti sapiente voluptatum iure nobis fugiat, vero dolorem a non velit aut.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit sapiente dicta ea vel dignissimos ullam et tempora nobis animi voluptatibus similique, totam eos atque obcaecati nisi veniam delectus asperiores voluptates.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, sint. Non assumenda, fuga distinctio facere voluptatum id doloremque sunt, iusto necessitatibus inventore praesentium officia culpa libero labore dicta ullam in.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni dolorem laborum voluptatem ex magnam tempore exercitationem architecto sed, velit consequuntur cupiditate provident autem, illum doloremque, quis nesciunt repellat? Consectetur, incidunt.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum repudiandae porro, dicta ipsa repellat dolorem quidem maxime adipisci assumenda magni facere maiores facilis nostrum amet ea, quas optio rerum laboriosam.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit nemo voluptatum non voluptates asperiores exercitationem? Adipisci maxime illo, sit eveniet minima autem esse vel suscipit harum excepturi? Optio, exercitationem aperiam!`,
+        cantidad_paginas: 45
+    },
+
+    // --- Capítulos para el Libro 3: Cien años de soledad ---
+    {
+        id_capitulo: 9,
+        id_libro: 3,
+        numero_capitulo: 1,
+        titulo_capitulo: "Macondo y los gitanos",
+        sinapsis: "Frente al pelotón de fusilamiento, el coronel Aureliano Buendía recuerda la época en que Macondo era una aldea de barro y cañabrava visitada por los inventos de Melquíades.",
+        contenido: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus culpa iusto ullam maiores quia odio delectus vel eligendi, ipsum amet. Unde molestiae nostrum optio temporibus vel! Architecto repellendus vitae excepturi.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure dolorem, ad quibusdam aspernatur eaque atque sequi dolorum reprehenderit! Voluptates illo cum rem cupiditate cumque doloremque enim deserunt asperiores non libero.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore reiciendis autem, harum quasi, quam iure, sed voluptas illo tempora beatae asperiores! Deleniti delectus ad modi distinctio, assumenda quia odit magni?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla veniam cum expedita error ratione quasi consectetur, quod consequatur! Consequatur, ratione eaque. Consequatur assumenda omnis tenetur quidem minus rem neque? Consequatur.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut laborum, quibusdam exercitationem nulla, tempora fugit illo, quas ullam ipsam rem vitae! Doloribus culpa magni aut soluta, natus accusantium reprehenderit sapiente?
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione ab eum, itaque alias sequi vero, blanditiis impedit qui sed expedita, ipsum sunt corrupti reiciendis iusto autem doloribus animi nemo quis.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis deleniti repudiandae, provident sit ipsa et deserunt voluptates odio corrupti sapiente voluptatum iure nobis fugiat, vero dolorem a non velit aut.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit sapiente dicta ea vel dignissimos ullam et tempora nobis animi voluptatibus similique, totam eos atque obcaecati nisi veniam delectus asperiores voluptates.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, sint. Non assumenda, fuga distinctio facere voluptatum id doloremque sunt, iusto necessitatibus inventore praesentium officia culpa libero labore dicta ullam in.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni dolorem laborum voluptatem ex magnam tempore exercitationem architecto sed, velit consequuntur cupiditate provident autem, illum doloremque, quis nesciunt repellat? Consectetur, incidunt.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum repudiandae porro, dicta ipsa repellat dolorem quidem maxime adipisci assumenda magni facere maiores facilis nostrum amet ea, quas optio rerum laboriosam.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit nemo voluptatum non voluptates asperiores exercitationem? Adipisci maxime illo, sit eveniet minima autem esse vel suscipit harum excepturi? Optio, exercitationem aperiam!`,
+        cantidad_paginas: 35
+    },
+    {
+        id_capitulo: 10,
+        id_libro: 3,
+        numero_capitulo: 2,
+        titulo_capitulo: "El galeón español",
+        sinapsis: "José Arcadio Buendía, obsesionado con encontrar una salida al mar, emprende una expedición a través de la selva y halla los restos fantasmales de un enorme barco.",
+        contenido: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus culpa iusto ullam maiores quia odio delectus vel eligendi, ipsum amet. Unde molestiae nostrum optio temporibus vel! Architecto repellendus vitae excepturi.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure dolorem, ad quibusdam aspernatur eaque atque sequi dolorum reprehenderit! Voluptates illo cum rem cupiditate cumque doloremque enim deserunt asperiores non libero.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore reiciendis autem, harum quasi, quam iure, sed voluptas illo tempora beatae asperiores! Deleniti delectus ad modi distinctio, assumenda quia odit magni?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla veniam cum expedita error ratione quasi consectetur, quod consequatur! Consequatur, ratione eaque. Consequatur assumenda omnis tenetur quidem minus rem neque? Consequatur.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut laborum, quibusdam exercitationem nulla, tempora fugit illo, quas ullam ipsam rem vitae! Doloribus culpa magni aut soluta, natus accusantium reprehenderit sapiente?
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione ab eum, itaque alias sequi vero, blanditiis impedit qui sed expedita, ipsum sunt corrupti reiciendis iusto autem doloribus animi nemo quis.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis deleniti repudiandae, provident sit ipsa et deserunt voluptates odio corrupti sapiente voluptatum iure nobis fugiat, vero dolorem a non velit aut.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit sapiente dicta ea vel dignissimos ullam et tempora nobis animi voluptatibus similique, totam eos atque obcaecati nisi veniam delectus asperiores voluptates.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, sint. Non assumenda, fuga distinctio facere voluptatum id doloremque sunt, iusto necessitatibus inventore praesentium officia culpa libero labore dicta ullam in.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni dolorem laborum voluptatem ex magnam tempore exercitationem architecto sed, velit consequuntur cupiditate provident autem, illum doloremque, quis nesciunt repellat? Consectetur, incidunt.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum repudiandae porro, dicta ipsa repellat dolorem quidem maxime adipisci assumenda magni facere maiores facilis nostrum amet ea, quas optio rerum laboriosam.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit nemo voluptatum non voluptates asperiores exercitationem? Adipisci maxime illo, sit eveniet minima autem esse vel suscipit harum excepturi? Optio, exercitationem aperiam!`,
+        cantidad_paginas: 31
+    },
+    {
+        id_capitulo: 11,
+        id_libro: 3,
+        numero_capitulo: 3,
+        titulo_capitulo: "La peste del insomnio",
+        sinapsis: "La tranquilidad de Macondo se ve alterada por la llegada de Rebeca y una extraña enfermedad que borra los recuerdos y el sueño de todos sus habitantes.",
+        contenido: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus culpa iusto ullam maiores quia odio delectus vel eligendi, ipsum amet. Unde molestiae nostrum optio temporibus vel! Architecto repellendus vitae excepturi.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure dolorem, ad quibusdam aspernatur eaque atque sequi dolorum reprehenderit! Voluptates illo cum rem cupiditate cumque doloremque enim deserunt asperiores non libero.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore reiciendis autem, harum quasi, quam iure, sed voluptas illo tempora beatae asperiores! Deleniti delectus ad modi distinctio, assumenda quia odit magni?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla veniam cum expedita error ratione quasi consectetur, quod consequatur! Consequatur, ratione eaque. Consequatur assumenda omnis tenetur quidem minus rem neque? Consequatur.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut laborum, quibusdam exercitationem nulla, tempora fugit illo, quas ullam ipsam rem vitae! Doloribus culpa magni aut soluta, natus accusantium reprehenderit sapiente?
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione ab eum, itaque alias sequi vero, blanditiis impedit qui sed expedita, ipsum sunt corrupti reiciendis iusto autem doloribus animi nemo quis.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis deleniti repudiandae, provident sit ipsa et deserunt voluptates odio corrupti sapiente voluptatum iure nobis fugiat, vero dolorem a non velit aut.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit sapiente dicta ea vel dignissimos ullam et tempora nobis animi voluptatibus similique, totam eos atque obcaecati nisi veniam delectus asperiores voluptates.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, sint. Non assumenda, fuga distinctio facere voluptatum id doloremque sunt, iusto necessitatibus inventore praesentium officia culpa libero labore dicta ullam in.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni dolorem laborum voluptatem ex magnam tempore exercitationem architecto sed, velit consequuntur cupiditate provident autem, illum doloremque, quis nesciunt repellat? Consectetur, incidunt.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum repudiandae porro, dicta ipsa repellat dolorem quidem maxime adipisci assumenda magni facere maiores facilis nostrum amet ea, quas optio rerum laboriosam.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit nemo voluptatum non voluptates asperiores exercitationem? Adipisci maxime illo, sit eveniet minima autem esse vel suscipit harum excepturi? Optio, exercitationem aperiam!`,
+        cantidad_paginas: 39
+    },
+
+    // --- Capítulos para el Libro 4: El Pozo de la Ascensión ---
+    {
+        id_capitulo: 12,
+        id_libro: 4,
+        numero_capitulo: 1,
+        titulo_capitulo: "El Nuevo Rey",
+        sinapsis: "Elend Venture lucha por mantener el control de Luthadel mientras instituye un nuevo gobierno democrático en medio de la desconfianza general.",
+        contenido: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus culpa iusto ullam maiores quia odio delectus vel eligendi, ipsum amet. Unde molestiae nostrum optio temporibus vel! Architecto repellendus vitae excepturi.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure dolorem, ad quibusdam aspernatur eaque atque sequi dolorum reprehenderit! Voluptates illo cum rem cupiditate cumque doloremque enim deserunt asperiores non libero.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore reiciendis autem, harum quasi, quam iure, sed voluptas illo tempora beatae asperiores! Deleniti delectus ad modi distinctio, assumenda quia odit magni?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla veniam cum expedita error ratione quasi consectetur, quod consequatur! Consequatur, ratione eaque. Consequatur assumenda omnis tenetur quidem minus rem neque? Consequatur.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut laborum, quibusdam exercitationem nulla, tempora fugit illo, quas ullam ipsam rem vitae! Doloribus culpa magni aut soluta, natus accusantium reprehenderit sapiente?
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione ab eum, itaque alias sequi vero, blanditiis impedit qui sed expedita, ipsum sunt corrupti reiciendis iusto autem doloribus animi nemo quis.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis deleniti repudiandae, provident sit ipsa et deserunt voluptates odio corrupti sapiente voluptatum iure nobis fugiat, vero dolorem a non velit aut.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit sapiente dicta ea vel dignissimos ullam et tempora nobis animi voluptatibus similique, totam eos atque obcaecati nisi veniam delectus asperiores voluptates.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, sint. Non assumenda, fuga distinctio facere voluptatum id doloremque sunt, iusto necessitatibus inventore praesentium officia culpa libero labore dicta ullam in.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni dolorem laborum voluptatem ex magnam tempore exercitationem architecto sed, velit consequuntur cupiditate provident autem, illum doloremque, quis nesciunt repellat? Consectetur, incidunt.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum repudiandae porro, dicta ipsa repellat dolorem quidem maxime adipisci assumenda magni facere maiores facilis nostrum amet ea, quas optio rerum laboriosam.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit nemo voluptatum non voluptates asperiores exercitationem? Adipisci maxime illo, sit eveniet minima autem esse vel suscipit harum excepturi? Optio, exercitationem aperiam!`,
+        cantidad_paginas: 34
+    },
+    {
+        id_capitulo: 13,
+        id_libro: 4,
+        numero_capitulo: 2,
+        titulo_capitulo: "Asesinos en la Bruma",
+        sinapsis: "Vin es atacada por un grupo de asesinos nacidos de la bruma, descubriendo que un misterioso vigía alomántico los ha estado siguiendo en la noche.",
+        contenido: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus culpa iusto ullam maiores quia odio delectus vel eligendi, ipsum amet. Unde molestiae nostrum optio temporibus vel! Architecto repellendus vitae excepturi.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure dolorem, ad quibusdam aspernatur eaque atque sequi dolorum reprehenderit! Voluptates illo cum rem cupiditate cumque doloremque enim deserunt asperiores non libero.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore reiciendis autem, harum quasi, quam iure, sed voluptas illo tempora beatae asperiores! Deleniti delectus ad modi distinctio, assumenda quia odit magni?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla veniam cum expedita error ratione quasi consectetur, quod consequatur! Consequatur, ratione eaque. Consequatur assumenda omnis tenetur quidem minus rem neque? Consequatur.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut laborum, quibusdam exercitationem nulla, tempora fugit illo, quas ullam ipsam rem vitae! Doloribus culpa magni aut soluta, natus accusantium reprehenderit sapiente?
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione ab eum, itaque alias sequi vero, blanditiis impedit qui sed expedita, ipsum sunt corrupti reiciendis iusto autem doloribus animi nemo quis.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis deleniti repudiandae, provident sit ipsa et deserunt voluptates odio corrupti sapiente voluptatum iure nobis fugiat, vero dolorem a non velit aut.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit sapiente dicta ea vel dignissimos ullam et tempora nobis animi voluptatibus similique, totam eos atque obcaecati nisi veniam delectus asperiores voluptates.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, sint. Non assumenda, fuga distinctio facere voluptatum id doloremque sunt, iusto necessitatibus inventore praesentium officia culpa libero labore dicta ullam in.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni dolorem laborum voluptatem ex magnam tempore exercitationem architecto sed, velit consequuntur cupiditate provident autem, illum doloremque, quis nesciunt repellat? Consectetur, incidunt.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum repudiandae porro, dicta ipsa repellat dolorem quidem maxime adipisci assumenda magni facere maiores facilis nostrum amet ea, quas optio rerum laboriosam.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit nemo voluptatum non voluptates asperiores exercitationem? Adipisci maxime illo, sit eveniet minima autem esse vel suscipit harum excepturi? Optio, exercitationem aperiam!`,
+        cantidad_paginas: 46
+    },
+    {
+        id_capitulo: 14,
+        id_libro: 4,
+        numero_capitulo: 3,
+        titulo_capitulo: "El espía kandra",
+        sinapsis: "La tripulación descubre que un kandra espía se ha infiltrado en el palacio, tomando los huesos de uno de los suyos. La paranoia comienza a fracturar al equipo.",
+        contenido: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus culpa iusto ullam maiores quia odio delectus vel eligendi, ipsum amet. Unde molestiae nostrum optio temporibus vel! Architecto repellendus vitae excepturi.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure dolorem, ad quibusdam aspernatur eaque atque sequi dolorum reprehenderit! Voluptates illo cum rem cupiditate cumque doloremque enim deserunt asperiores non libero.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore reiciendis autem, harum quasi, quam iure, sed voluptas illo tempora beatae asperiores! Deleniti delectus ad modi distinctio, assumenda quia odit magni?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla veniam cum expedita error ratione quasi consectetur, quod consequatur! Consequatur, ratione eaque. Consequatur assumenda omnis tenetur quidem minus rem neque? Consequatur.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut laborum, quibusdam exercitationem nulla, tempora fugit illo, quas ullam ipsam rem vitae! Doloribus culpa magni aut soluta, natus accusantium reprehenderit sapiente?
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione ab eum, itaque alias sequi vero, blanditiis impedit qui sed expedita, ipsum sunt corrupti reiciendis iusto autem doloribus animi nemo quis.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis deleniti repudiandae, provident sit ipsa et deserunt voluptates odio corrupti sapiente voluptatum iure nobis fugiat, vero dolorem a non velit aut.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit sapiente dicta ea vel dignissimos ullam et tempora nobis animi voluptatibus similique, totam eos atque obcaecati nisi veniam delectus asperiores voluptates.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, sint. Non assumenda, fuga distinctio facere voluptatum id doloremque sunt, iusto necessitatibus inventore praesentium officia culpa libero labore dicta ullam in.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni dolorem laborum voluptatem ex magnam tempore exercitationem architecto sed, velit consequuntur cupiditate provident autem, illum doloremque, quis nesciunt repellat? Consectetur, incidunt.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum repudiandae porro, dicta ipsa repellat dolorem quidem maxime adipisci assumenda magni facere maiores facilis nostrum amet ea, quas optio rerum laboriosam.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit nemo voluptatum non voluptates asperiores exercitationem? Adipisci maxime illo, sit eveniet minima autem esse vel suscipit harum excepturi? Optio, exercitationem aperiam!`,
+        cantidad_paginas: 29
     }
 ];
 
 // Datos de prueba (recordar borrarlos luego)
 export const mockBooks: Book[] = [
-    // --- PROBAR SCROLL ---
     {
         id_producto: 1,
         autor: "Brandon Sanderson",
@@ -76,6 +250,28 @@ export const mockBooks: Book[] = [
         isbn: "978-8417347291",
         fecha_publicacion: "2006-07-17",
         direccion_portada: "https://placehold.co/150x220?text=Imperio+Final"
+    },
+    {
+        id_producto: 2,
+        autor: "Frank Herbert",
+        genero: "Ciencia Ficción",
+        editorial: "DeBolsillo",
+        titulo: "Dune",
+        descripcion: "La especia debe fluir. Una aventura épica en el peligroso planeta desierto de Arrakis.",
+        isbn: "978-8497596824",
+        fecha_publicacion: "1965-08-01",
+        direccion_portada: "https://placehold.co/150x220?text=Dune"
+    },
+    {
+        id_producto: 3,
+        autor: "Gabriel García Márquez",
+        genero: "Realismo Mágico",
+        editorial: "Literatura Random House",
+        titulo: "Cien años de soledad",
+        descripcion: "Muchos años después, frente al pelotón de fusilamiento...",
+        isbn: "978-8439728398",
+        fecha_publicacion: "1967-05-30",
+        direccion_portada: "https://placehold.co/150x220?text=Cien+años+soledad"
     },
     {
         id_producto: 4,
@@ -154,70 +350,219 @@ export const mockBooks: Book[] = [
         fecha_publicacion: "1954-11-11",
         direccion_portada: "https://placehold.co/150x220?text=Dos+Torres"
     },
-
-    // --- OTRAS CATEGORÍAS ---
     {
-        id_producto: 2,
-        autor: "Frank Herbert",
+        id_producto: 11,
+        autor: "George Orwell",
         genero: "Ciencia Ficción",
         editorial: "DeBolsillo",
-        titulo: "Dune",
-        descripcion: "La especia debe fluir. Una aventura épica en el peligroso planeta desierto de Arrakis.",
-        isbn: "978-8497596824",
-        fecha_publicacion: "1965-08-01",
-        direccion_portada: "https://placehold.co/150x220?text=Dune"
+        titulo: "1984",
+        descripcion: "El Gran Hermano te vigila. Una distopía sobre el control totalitario y la pérdida de la libertad.",
+        isbn: "978-8499890944",
+        fecha_publicacion: "1949-06-08",
+        direccion_portada: "https://placehold.co/150x220?text=1984"
     },
     {
-        id_producto: 3,
-        autor: "Gabriel García Márquez",
-        genero: "Realismo Mágico",
-        editorial: "Literatura Random House",
-        titulo: "Cien años de soledad",
-        descripcion: "Muchos años después, frente al pelotón de fusilamiento...",
-        isbn: "978-8439728398",
-        fecha_publicacion: "1967-05-30",
-        direccion_portada: "https://placehold.co/150x220?text=Cien+años+soledad"
+        id_producto: 12,
+        autor: "Isaac Asimov",
+        genero: "Ciencia Ficción",
+        editorial: "DeBolsillo",
+        titulo: "Fundación",
+        descripcion: "El Imperio Galáctico se derrumba, y Hari Seldon idea un plan para salvar el conocimiento de la humanidad.",
+        isbn: "978-8497599245",
+        fecha_publicacion: "1951-05-01",
+        direccion_portada: "https://placehold.co/150x220?text=Fundacion"
+    },
+    {
+        id_producto: 13,
+        autor: "Ray Bradbury",
+        genero: "Ciencia Ficción",
+        editorial: "Minotauro",
+        titulo: "Fahrenheit 451",
+        descripcion: "Guy Montag es un bombero, y su trabajo consiste en quemar libros que están prohibidos.",
+        isbn: "978-8445077250",
+        fecha_publicacion: "1953-10-19",
+        direccion_portada: "https://placehold.co/150x220?text=Fahrenheit+451"
+    },
+    {
+        id_producto: 14,
+        autor: "William Gibson",
+        genero: "Cyberpunk",
+        editorial: "Minotauro",
+        titulo: "Neuromante",
+        descripcion: "Un vaquero de la consola es contratado para realizar el hackeo definitivo.",
+        isbn: "978-8445076628",
+        fecha_publicacion: "1984-07-01",
+        direccion_portada: "https://placehold.co/150x220?text=Neuromante"
+    },
+    {
+        id_producto: 15,
+        autor: "Brandon Sanderson",
+        genero: "Fantasía Épica",
+        editorial: "Nova",
+        titulo: "Elantris",
+        descripcion: "La ciudad de los dioses ha caído. Una historia de magia maldita y política desesperada.",
+        isbn: "978-8416690183",
+        fecha_publicacion: "2005-04-21",
+        direccion_portada: "https://placehold.co/150x220?text=Elantris"
     }
 ];
 
+// Hemos agregado 15 libros del usuario para llenar bien los carruseles
 export const mockUserBooks: UserBooks[] = [
+    // --- LEYENDO (6 libros para probar el scroll) ---
     {
         id_usuario: 1,
-        libro: mockBooks[0], // "El Imperio Final"
+        libro: mockBooks[0], // El Imperio Final
         estado: "LEYENDO",
         es_comprado: true,
         es_favorito: true,
-        capitulo_actual: 1,
+        capitulo_actual: 3,
         parrafo_actual: 4,
         progreso: 25
     },
     {
         id_usuario: 1,
-        libro: mockBooks[8], // "Dune"
-        estado: "SIN LEER",
+        libro: mockBooks[5], // El Nombre del Viento
+        estado: "LEYENDO",
+        es_comprado: true,
+        es_favorito: true,
+        capitulo_actual: 12,
+        parrafo_actual: 0,
+        progreso: 45
+    },
+    {
+        id_usuario: 1,
+        libro: mockBooks[8], // La Comunidad del Anillo
+        estado: "LEYENDO",
         es_comprado: false,
         es_favorito: false,
         capitulo_actual: 1,
+        parrafo_actual: 0,
+        progreso: 5
+    },
+    {
+        id_usuario: 1,
+        libro: mockBooks[10], // 1984
+        estado: "LEYENDO",
+        es_comprado: true,
+        es_favorito: false,
+        capitulo_actual: 5,
+        parrafo_actual: 2,
+        progreso: 60
+    },
+    {
+        id_usuario: 1,
+        libro: mockBooks[12], // Fahrenheit 451
+        estado: "LEYENDO",
+        es_comprado: true,
+        es_favorito: true,
+        capitulo_actual: 2,
+        parrafo_actual: 10,
+        progreso: 30
+    },
+    {
+        id_usuario: 1,
+        libro: mockBooks[13], // Neuromante
+        estado: "LEYENDO",
+        es_comprado: false,
+        es_favorito: false,
+        capitulo_actual: 1,
+        parrafo_actual: 0,
+        progreso: 2
+    },
+
+    // --- LEIDO ---
+    {
+        id_usuario: 1,
+        libro: mockBooks[2], // Cien años de soledad
+        estado: "LEIDO",
+        es_comprado: true,
+        es_favorito: true,
+        capitulo_actual: 20,
+        parrafo_actual: 0,
+        progreso: 100
+    },
+    {
+        id_usuario: 1,
+        libro: mockBooks[7], // Juego de Tronos
+        estado: "LEIDO",
+        es_comprado: true,
+        es_favorito: false,
+        capitulo_actual: 73,
+        parrafo_actual: 0,
+        progreso: 100
+    },
+
+    // --- PENDIENTE (5 libros para probar el scroll) ---
+    {
+        id_usuario: 1,
+        libro: mockBooks[3], // El Pozo de la Ascensión
+        estado: "PENDIENTE",
+        es_comprado: false,
+        es_favorito: true,
+        capitulo_actual: 0,
         parrafo_actual: 0,
         progreso: 0
     },
     {
         id_usuario: 1,
-        libro: mockBooks[9], // "Cien años de soledad"
-        estado: "LEIDO",
-        es_comprado: true,
-        es_favorito: true,
-        capitulo_actual: 3,
-        parrafo_actual: 15,
-        progreso: 100
-    },
-    {
-        id_usuario: 1,
-        libro: mockBooks[0],
+        libro: mockBooks[4], // El Héroe de las Eras
         estado: "PENDIENTE",
         es_comprado: false,
         es_favorito: false,
-        capitulo_actual: 1,
+        capitulo_actual: 0,
+        parrafo_actual: 0,
+        progreso: 0
+    },
+    {
+        id_usuario: 1,
+        libro: mockBooks[6], // El Temor de un Hombre Sabio
+        estado: "PENDIENTE",
+        es_comprado: true,
+        es_favorito: true,
+        capitulo_actual: 0,
+        parrafo_actual: 0,
+        progreso: 0
+    },
+    {
+        id_usuario: 1,
+        libro: mockBooks[11], // Fundación
+        estado: "PENDIENTE",
+        es_comprado: false,
+        es_favorito: false,
+        capitulo_actual: 0,
+        parrafo_actual: 0,
+        progreso: 0
+    },
+    {
+        id_usuario: 1,
+        libro: mockBooks[14], // Elantris
+        estado: "PENDIENTE",
+        es_comprado: true,
+        es_favorito: true,
+        capitulo_actual: 0,
+        parrafo_actual: 0,
+        progreso: 0
+    },
+
+    // --- SIN LEER ---
+    {
+        id_usuario: 1,
+        libro: mockBooks[1], // Dune
+        estado: "SIN LEER",
+        es_comprado: true,
+        es_favorito: true, // Lo marcamos favorito aunque no lo haya leido para probar la lista
+        capitulo_actual: 0,
+        parrafo_actual: 0,
+        progreso: 0
+    },
+    {
+        id_usuario: 1,
+        libro: mockBooks[9], // Las Dos Torres
+        estado: "SIN LEER",
+        es_comprado: true,
+        es_favorito: false,
+        capitulo_actual: 0,
         parrafo_actual: 0,
         progreso: 0
     }

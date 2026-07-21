@@ -5,6 +5,7 @@ import NotFound from './pages/NotFound';
 import Layout from './components/Layout/Layout';
 import Categories from './pages/CategoriesPage';
 import ReadingPage from './pages/ReadingPage';
+import Personal from './pages/PersonalPage';
 
 const router = createHashRouter([
   {
@@ -22,6 +23,10 @@ const router = createHashRouter([
         {
           path: "/Reading/:titulo",
           element: <ReadingPage/>
+        },
+        {
+          path: "/Personal",
+          element: <Personal/>
         },
         {
           path: "/Reading/:titulo/:capitulo?",

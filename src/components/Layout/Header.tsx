@@ -55,7 +55,7 @@ export default function Header({isMenuOpen ,onToggle, isSearchActive}:HeaderProp
                         style={{
                             pointerEvents: isSearchActive? 'none': 'auto'
                         }}
-                        inert={isSearchActive? true: false}
+                        inert={isSearchActive}
                     >
                         {/* Menú hamburguesa */}
                         <motion.svg

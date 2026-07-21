@@ -5,11 +5,10 @@
     height: 90%;
     margin-top: 30px;
     margin-bottom: 30px;
-    position: relative; /* Mantiene la página sin saltos */
+    position: relative; 
     z-index: 9;
 }
 
-/* Resortes invisibles para centrar la barra */
 .search_container::before,
 .search_container::after {
     content: "";
@@ -17,24 +16,20 @@
     transition: flex 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Resorte izquierdo desaparece al activarse */
 .search_container.search_active::before {
     flex: 0;
 }
 
-/* Resorte derecho ocupa todo el espacio sobrante al activarse */
 .search_container.search_active::after {
     flex: 1;
 }
 
-/* Comportamiento del contenedor de búsqueda al activarse */
 .search_container.search_active .search_input_wrapper {
     width: 30%;
     margin-left: 20px;
-    border-color: #9628aa; /* Mantiene el borde morado */
+    border-color: var(--accent);
 }
 
-/* Quita los resortes y ocupa el 100% */
 @media (max-width: 768px) {
     .search_container.search_active::before,
     .search_container.search_active::after {
@@ -56,26 +51,24 @@
     display: flex;
     align-items: center;
 
-    /* Diseño unificado en el padre */
-    background-color: transparent;
-    border: 1px solid #ddd;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
     border-radius: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px var(--shadow-color);
 
-    /* Transiciones fluidas */
     transition: width 0.5s cubic-bezier(0.25, 0.8, 0.25, 1),
                 margin-left 0.5s cubic-bezier(0.25, 0.8, 0.25, 1),
                 border-color 0.3s ease,
                 box-shadow 0.3s ease;
 
-    pointer-events: auto; /* Evitar que se desactive por el sticky*/
+    pointer-events: auto; 
 }
 
 /* Estado Focus */
 .search_input_wrapper:focus-within {
-    border-color: #9628aa;
-    box-shadow: 0 0 0 4px rgba(150, 40, 170, 0.15),
-                0 4px 12px rgba(0, 0, 0, 0.08);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px var(--accent-bg),
+                0 4px 12px var(--shadow-color);
 }
 
 /* ICONO */
@@ -85,19 +78,17 @@
     top: 50%;
     transform: translateY(-50%);
     pointer-events: none;
-    color: rgb(112, 114, 115);
+    color: var(--text);
     transition: all 0.3s ease;
 }
 
-/* La lupa reacciona al click */
 .search_input_wrapper:focus-within .search_icon {
-    color: #9628aa;
+    color: var(--accent);
     transform: translateY(-50%) scale(1.05);
 }
 
-/* La lupa se mantiene morada si hay texto */
 .search_active .search_icon {
-    color: #9628aa;
+    color: var(--accent);
 }
 
 /* INPUT DE TEXTO */
@@ -108,11 +99,12 @@
 
 .search_input {
     width: 100%;
-    padding: 18px 40px 18px 44px !important; /* Espacios exactos para lupa y X */
+    padding: 18px 40px 18px 44px !important; 
     border: none;
     background: transparent;
     font-size: 16px;
-    outline: none; /* Quita el marco azul del navegador */
+    color: var(--text-h);
+    outline: none; 
 }
 
 /* BOTÓN DE LIMPIAR (X) */
@@ -124,7 +116,7 @@
     background: none;
     border: none;
     font-size: 22px;
-    color: #999;
+    color: var(--text);
     cursor: pointer;
     padding: 0;
     line-height: 1;
@@ -133,7 +125,7 @@
 }
 
 .clear_button:hover {
-    color: #e6c2f0;
+    color: var(--accent);
 }
 
 /* AUTOCOMPLETADO (DROPDOWN) */
@@ -144,9 +136,10 @@
     width: 100%;
     height: 100vh;
     box-sizing: border-box;
-    background-color: rgba(101, 25, 104, 0.2);
+    background-color: var(--bg);
+    border: 1px solid var(--border);
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px var(--shadow-color);
     list-style: none;
     margin: 0;
     padding: 0;
@@ -158,22 +151,22 @@
 .search_dropdown li {
     padding: 15px;
     cursor: pointer;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.329);
+    border-bottom: 1px solid var(--border);
     text-align: left;
+    color: var(--text-h);
 }
 
 .search_dropdown li:hover {
     background: linear-gradient(
         to top,
-        rgba(24, 24, 24, 0.4) 40%,
-        rgba(24, 24, 24, 0.2) 70%,
-        rgba(24, 24, 24, 0.05) 100%
+        var(--accent-bg) 40%,
+        transparent 100%
     );
-    color: white;
+    color: var(--accent);
 }
 
 .no_results {
-    color: #666;
+    color: var(--text);
     font-style: italic;
     text-align: center !important;
 }

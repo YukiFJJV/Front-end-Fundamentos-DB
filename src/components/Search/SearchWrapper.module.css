@@ -15,6 +15,7 @@
     font-family: 'Inter', sans-serif;
     font-size: 30px;
     font-weight: bolder;
+    color: var(--text-h);
 }
 
 .results {
@@ -33,7 +34,7 @@
     background: none;
     border: none;
     font-size: 22px;
-    color: #999;
+    color: var(--text);
     cursor: pointer;
     padding: 0;
     line-height: 1;
@@ -41,11 +42,11 @@
 }
 
 .clear_button:hover {
-    color: #333;
+    color: var(--accent);
 }
 
 .no_results_text {
-    color: #666;
+    color: var(--text);
     font-style: italic;
     margin-top: 20px;
 }
