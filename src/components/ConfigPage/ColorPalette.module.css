@@ -1,0 +1,52 @@
+.palette_card {
+    background-color: rgba(var(--bg-rgb), 0.2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    width: 100%;
+    max-width: 220px; /* Tarjetas más angostas y compactas */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el título y la lista de colores */
+    gap: 8px;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.palette_card:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+    border-color: var(--accent);
+}
+
+.palette_title {
+    color: var(--text-h);
+    margin: 0;
+    font-size: 15px; /* Un tamaño sutil */
+    text-align: center;
+    font-weight: 500;
+}
+
+.color_list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 12px; /* Separación entre cada color */
+
+}
+
+.color_list li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.15));
+}
+
+.background { color: var(--bg); }
+.titles { color: var(--text-h); }
+.text { color: var(--text); }
+.accent { color: var(--accent); }
+.border { color: var(--border); }

@@ -50,10 +50,11 @@
     border-radius: 50%;
     z-index: 20;
     cursor: pointer;
+    color: var(--accent);
 }
 
 .left button svg {
-  fill: var(--text-h); /* Asegura que el icono hamburguesa se vea bien */
+    stroke: currentColor;
 }
 
 .overlay {

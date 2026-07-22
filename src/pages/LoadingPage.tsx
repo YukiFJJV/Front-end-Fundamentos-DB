@@ -41,7 +41,7 @@ export default function LoadingPage({
                             height="140px"
                             width="140px"
                             viewBox="0 0 512 512"
-                            fill="#4F46E5"
+                            fill="var(--accent)"
                             animate={{ rotate: 360 }}
                             transition={{
                                 duration: 4, // Rotación de apoyo

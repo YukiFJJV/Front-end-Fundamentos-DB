@@ -63,7 +63,7 @@ export default function Header({isMenuOpen ,onToggle, isSearchActive}:HeaderProp
                             height="40px"
                             viewBox="0 0 24 24"
                             fill="none"
-                            stroke="#b146b9"
+                            stroke="currentColor"
                             strokeWidth="2"
                             strokeLinecap="round"
                         >

@@ -1,4 +1,3 @@
-import './App.css'
 import { createHashRouter, RouterProvider } from 'react-router-dom'
 import Home from './pages/HomePage';
 import NotFound from './pages/NotFound';
@@ -6,6 +5,7 @@ import Layout from './components/Layout/Layout';
 import Categories from './pages/CategoriesPage';
 import ReadingPage from './pages/ReadingPage';
 import Personal from './pages/PersonalPage';
+import Settings from './pages/SettingsPage';
 
 const router = createHashRouter([
   {
@@ -27,6 +27,10 @@ const router = createHashRouter([
         {
           path: "/Personal",
           element: <Personal/>
+        },
+        {
+          path: "/Settings",
+          element: <Settings/>
         },
         {
           path: "/Reading/:titulo/:capitulo?",

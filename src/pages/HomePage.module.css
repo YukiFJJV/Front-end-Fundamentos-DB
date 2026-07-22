@@ -23,7 +23,8 @@
     margin-bottom: 30px;
     margin-top: 60px;
     color: var(--text-h);
-    text-shadow: -4px 0px 0px rgba(255,0,0,0.5), 4px 0px 0px rgba(0,0,255,0.5);
+    text-shadow: -3px 0px 0px var(--loading-shadow-left),
+                3px 0px 0px var(--loading-shadow-right);
 }
 
 .cursor_text{

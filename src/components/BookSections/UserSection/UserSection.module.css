@@ -35,7 +35,7 @@
 .book_list {
     display: flex;
     overflow-x: auto;
-    overflow-y: hidden;
+
     gap: 20px; /* Espaciado entre las BookCards */
     padding: 15px 0;
     margin: 0;
@@ -59,8 +59,8 @@
 
 /* Botones y flechas */
 .scroll_button {
-    background-color: rgba(0, 0, 0, 0.3);
-    color: white;
+    background-color: var(--overlay);
+    color: var(--text-h);
     border: none;
     border-radius: 50%;
     width: 40px;
@@ -76,7 +76,7 @@
 }
 
 .scroll_button:hover {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: var(--overlay-strong);
 }
 
 /* --- VER MÁS --- */
@@ -89,15 +89,15 @@
 }
 
 .link_style {
-    color: rgba(150, 40, 170);
+    color: var(--accent);
     text-decoration: none;
     font-size: 14px;
     font-weight: lighter;
     font-family: 'Fira Code', 'JetBrains Mono', monospace;
     cursor: pointer;
-    transition: color 0.3s ease;
+    transition: opacity 0.3s ease;
 }
 
 .link_style:hover {
-    color: rgba(190, 120, 190);
+    opacity: 0.85;
 }

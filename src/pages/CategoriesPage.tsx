@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styles from './CategoriesPage.module.css'
 import SearchWrapper from '../components/Search/SearchWrapper';
 import CategorySection from '../components/BookSections/Category/CategorySection';
-import ProductDescription from '../components/BookSections/ProductDescription';
+import ProductDescription from '../components/BookSections/ProductDescription/ProductDescription';
 import  { getBooks, getChapters, getUserBooks } from '../services/bookService';
 import { useBookNavigation } from '../Hooks/useBookNavigation'
 import { useBookModal } from '../Hooks/useBookModal';

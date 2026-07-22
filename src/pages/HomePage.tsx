@@ -1,6 +1,6 @@
 import { useEffect, useState, useMemo } from "react";
 
-import ProductDescription from "../components/BookSections/ProductDescription";
+import ProductDescription from "../components/BookSections/ProductDescription/ProductDescription";
 import TypeText from '../components/TypeText';
 import styles from "./HomePage.module.css";
 import SearchWrapper from '../components/Search/SearchWrapper';

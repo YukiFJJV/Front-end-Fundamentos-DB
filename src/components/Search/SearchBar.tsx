@@ -37,7 +37,7 @@ export default function SearchBar({
 
         return parts.map((part, index) =>
             part.toLowerCase() === query.toLowerCase() ? (
-                <strong key={index} style={{ color: '#9628aa' }}>{part}</strong>
+                <strong key={index} style={{ color: 'var(--accent)' }}>{part}</strong>
             ) : (
                 part
             )

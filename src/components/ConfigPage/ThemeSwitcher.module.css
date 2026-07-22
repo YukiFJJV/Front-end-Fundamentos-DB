@@ -1,0 +1,189 @@
+.switcher_container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+}
+
+.layout_row {
+    display: flex;
+    gap: 32px;
+    align-items: stretch;
+}
+
+.sidebar {
+    flex: 0 0 240px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* El header donde ahora vive el botón arriba */
+.sidebar_header {
+    display: flex;
+    justify-content: center;
+}
+
+.main_content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.theme_section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.section_title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-h);
+    margin: 0;
+}
+
+/* NUEVO: Contenedor que recorta la animación para que no se salga de la caja */
+.animation_wrapper {
+    overflow-x: hidden;
+    padding-bottom: 4px; /* Pequeño margen para la sombra si la hubiera */
+}
+
+/* Animaciones */
+.slide_out {
+    animation: slideOutRight 0.3s forwards cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide_in {
+    animation: slideInLeft 0.3s forwards cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideOutRight {
+    0% { transform: translateX(0); opacity: 1; }
+    100% { transform: translateX(100%); opacity: 0; }
+}
+
+@keyframes slideInLeft {
+    0% { transform: translateX(-100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+.palette_grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden; /* Evita scroll horizontal al animar */
+    padding-right: 8px;
+}
+
+.palette_grid::-webkit-scrollbar {
+    width: 6px;
+}
+
+.palette_grid::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.palette_grid::-webkit-scrollbar-thumb {
+    background-color: var(--border);
+    border-radius: 4px;
+}
+
+.palette_grid::-webkit-scrollbar-thumb:hover {
+    background-color: var(--accent);
+}
+
+.divider_line {
+    width: 100%;
+    height: 1px;
+    border: none;
+    background-color: var(--border);
+    margin: 0;
+}
+
+.toggle_button {
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    color: var(--text);
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.toggle_button:hover {
+    background-color: var(--accent-bg);
+    color: var(--accent);
+    border-color: var(--accent-border);
+}
+
+.preview_header {
+    margin-bottom: 12px;
+}
+
+.children_grid {
+    background-color: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    min-height: 350px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.save_container {
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+}
+
+button {
+    background-color: var(--accent);
+    color: var(--bg);
+    border: 1px solid var(--accent-border);
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.1s ease, filter 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: var(--shadow);
+}
+
+button:hover{
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-filter);
+}
+
+.save_button{
+    background-color: var(--accent);
+    color: var(--bg);
+    border: 1px solid var(--accent-border);
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.1s ease, filter 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: var(--shadow);
+}
+
+.save_button:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-filter);
+}
+
+.save_button:active {
+    transform: translateY(1px);
+}

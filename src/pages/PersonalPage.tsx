@@ -5,7 +5,7 @@ import { getBooks, getUserBooks, getChapters } from '../services/bookService';
 import type Book from '../types/Book';
 import type Chapter from '../types/Chapter';
 import { useBookModal } from '../Hooks/useBookModal';
-import ProductDescription from '../components/BookSections/ProductDescription';
+import ProductDescription from '../components/BookSections/ProductDescription/ProductDescription';
 import LoadingPage from './LoadingPage';
 import { useBookNavigation } from '../Hooks/useBookNavigation';
 import styles from './PersonalPage.module.css'

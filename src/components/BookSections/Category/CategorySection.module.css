@@ -35,9 +35,9 @@
 .book_list {
     display: flex;
     overflow-x: auto;
-    overflow-y: hidden;
+
     gap: 20px; /* Espaciado entre las BookCards */
-    padding: 15px 0;
+    padding: 30px 10px;
     margin: 0;
     list-style: none;
     flex: 1; /* Ocupa el espacio restante entre los botones */
@@ -59,8 +59,8 @@
 
 /* Botones y flechas */
 .scroll_button {
-    background-color: rgba(0, 0, 0, 0.3);
-    color: white;
+    background-color: var(--overlay);
+    color: var(--text-h);
     border: none;
     border-radius: 50%;
     width: 40px;
@@ -76,5 +76,5 @@
 }
 
 .scroll_button:hover {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: var(--overlay-strong);
 }

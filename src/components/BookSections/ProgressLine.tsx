@@ -17,7 +17,7 @@ export default function ProgressLine({ percentage }: ProgressLineProps) {
             <rect
                 width="100%"
                 height="100%"
-                fill="#333333"
+                fill="var(--border)"
                 rx="4"
             />
 
@@ -25,7 +25,7 @@ export default function ProgressLine({ percentage }: ProgressLineProps) {
             <rect
                 width={`${safePercentage}%`}
                 height="100%"
-                fill="#76eaff"
+                fill="var(--accent)"
                 rx="4"
             />
         </svg>
